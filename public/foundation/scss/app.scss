@@ -57,11 +57,13 @@
 		font-size: rem-calc(13pt);
 		padding: 0;
 		line-height: 1.5;
+		font-weight: bold;
 	}
 	#companyTitle{
 		height:rem-calc(80px);
 		line-height:rem-calc(80px);
 		padding-left: rem-calc(114px);
+		font-family: $header-font-family;
 	}
 }
 
