@@ -52,12 +52,13 @@
 	.button{
 		color: $secondary-color;
 		margin:0;
-		height:rem-calc(120px);
-		font-size: rem-calc(20px);
+		height:rem-calc(80px);
+		width: rem-calc(80px);
+		font-size: rem-calc(13pt);
 	}
 	#companyTitle{
-		height:rem-calc(120px);
-		line-height:rem-calc(120px);
+		height:rem-calc(80px);
+		line-height:rem-calc(80px);
 	}
 }
 
