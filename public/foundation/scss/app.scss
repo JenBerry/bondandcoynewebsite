@@ -55,10 +55,13 @@
 		height:rem-calc(80px);
 		width: rem-calc(80px);
 		font-size: rem-calc(13pt);
+		padding: 0;
+		line-height: 1.5;
 	}
 	#companyTitle{
 		height:rem-calc(80px);
 		line-height:rem-calc(80px);
+		padding-left: rem-calc(114px);
 	}
 }
 
