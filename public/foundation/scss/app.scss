@@ -66,6 +66,26 @@
 		font-family: $header-font-family;
 	}
 }
+h1{
+	font-weight: 300;
+	font-family: $alt-font-family;
+}
+h2{
+	font-weight: 300;
+}
+.locationHeading{
+	text-transform: uppercase;
+	color: $secondary-color;
+	font-weight: bold;
+}
+.hMargin{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.vMargin{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
 
 
 
