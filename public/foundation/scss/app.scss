@@ -42,3 +42,28 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+
+/* -------- Bond & Coyne styles --------- */
+
+#pageHeader{
+	color: $secondary-color;
+	font-size: rem-calc(20px);
+	.button{
+		color: $secondary-color;
+		margin:0;
+		height:rem-calc(120px);
+		font-size: rem-calc(20px);
+	}
+	#companyTitle{
+		height:rem-calc(120px);
+		line-height:rem-calc(120px);
+	}
+}
+
+
+
+
+
+
+
