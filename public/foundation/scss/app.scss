@@ -133,8 +133,15 @@ dl.awards{
 		background-color: $white;
 	}
 }
-#pageFooter i{
-	padding-left:30px;
+
+#footerSocial{
+	margin-top:20px;
+	i{
+		padding: 0 15px;
+		@include breakpoint(medium){
+			padding:0 0 0 30px;
+		}
+	}
 }
 
 .hMargin{
