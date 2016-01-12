@@ -28,6 +28,49 @@
 	{% block content %}
 		Content goes here
 	{% endblock %}
+	<footer id="pageFooter">
+		<div class="row logo-footer collapse">
+			<div class="small-12 medium-10 large-6 columns medium-centered text-center vMargin">
+				{% set primaryFooterLogos = [
+					'img/footerLogos/CIM_full.png',
+					'img/footerLogos/gea-logo-eu-white.png'
+				] %}
+				{% for logo in primaryFooterLogos %}
+					<img class="primaryFooterLogo" src="{{logo}}" alt="" style="max-height:80px;">
+				{% endfor %}
+				<hr>
+				<div class="row">
+				{% set secondaryFooterLogos = [
+					'img/footerLogos/accred.png',
+					'img/footerLogos/CIM.png',
+					'img/footerLogos/google-partner-badge.png',
+					'img/footerLogos/RAR_logo--white.png'
+				] %}
+				{% for logo in secondaryFooterLogos %}
+					<div class="small-6 medium-3 columns">
+						<img src="{{logo}}" alt="">
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="hMargin vMargin">
+			<div class="row muted">
+				<div class="small-12 medium-6 columns">
+					<address class="font-light">
+						<span class="strong-title muted">Bond & Coyne</span><br>
+						+44 (0) 20 3567 1100<br>
+						<a  href="">hello@bondandcoyne.co.uk</a>
+					</address>
+				</div>
+				<div class="small-12 medium-3 columns text-right bigger">
+					<a href=""><i class="fi-social-twitter"></i></a>
+					<a href=""><i class="fi-social-linkedin"></i></a>
+					<a href=""><i class="fi-social-vimeo"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 	<script src="foundation/bower_components/jquery/dist/jquery.js"></script>
