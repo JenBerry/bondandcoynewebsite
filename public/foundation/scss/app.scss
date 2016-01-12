@@ -45,33 +45,23 @@
 
 
 /* -------- Bond & Coyne styles --------- */
-
-
-#pageHeader{
+/* styling */
+.font-bold{font-weight: 700;}
+.font-light{font-weight: 300;}
+.font-thin{font-weight: 100;}
+.alt-font{font-family: $alt-font-family;}
+.alt-color{color: $secondary-color;}
+.upper{text-transform: uppercase;}
+.caps{text-transform: capitalize;}
+.bigger{font-size: rem-calc(20pt);}
+.strong-title{
+	text-transform: uppercase;
 	color: $secondary-color;
-	font-size: rem-calc(20px);
-	@include breakpoint(medium) {
-		position: absolute;
-		width:100%;
-	}
-	.button{
-		color: $secondary-color;
-		margin:0;
-		height:rem-calc(80px);
-		width: rem-calc(80px);
-		font-size: rem-calc(13pt);
-		padding: 0;
-		line-height: 1.5;
-		font-weight: bold;
-	}
-	#companyTitle{
-		height:rem-calc(80px);
-		line-height:rem-calc(80px);
-		padding-left: rem-calc(114px);
-		font-family: $header-font-family;
-		background-color: $white;
-		font-weight: 400;
-	}
+	font-weight: bold;
+	font-size: rem-calc(14pt);
+}
+.muted{
+	color: $medium-gray
 }
 h1{
 	font-weight: 300;
@@ -84,14 +74,57 @@ h2{
 h3{
 	text-transform: uppercase;
 	color: $secondary-color;
-	font-weight: bold;
+	font-weight: 700;
+	margin-bottom: 0.3rem;
 }
-.locationHeading{
-	text-transform: uppercase;
-	color: $secondary-color;
-	font-weight: bold;
-	font-size: rem-calc(14pt);
+cite{
+	font-style: normal;
+	&:before{
+		content: "";
+	}
 }
+dl.awards{
+	color: $medium-gray;
+	dt{
+		font-family: $alt-font-family;
+		font-weight: 300;
+		font-size: rem-calc(19pt);
+		margin-top: 0.8rem;
+	}
+	dd{
+		@extend .strong-title;
+	}
+}
+.button.white{
+	background-color: $white;
+	color: $medium-gray;
+}
+
+
+
+/* layout */
+#pageHeader{
+	font-size: rem-calc(20px);
+	@include breakpoint(medium) {
+		position: absolute;
+		width:100%;
+	}
+	.button{
+		margin:0;
+		height:rem-calc(80px);
+		width: rem-calc(80px);
+		font-size: rem-calc(13pt);
+		padding: 0;
+		line-height: 1.5;
+	}
+	#companyTitle{
+		height:rem-calc(80px);
+		line-height:rem-calc(80px);
+		padding-left: rem-calc(114px);
+		background-color: $white;
+	}
+}
+
 .hMargin{
 	margin-left: 10px;
 	margin-right: 10px;
@@ -109,8 +142,17 @@ h3{
 		margin-top:12px;
 	}
 	margin-top:25px;
+	@include breakpoint(large){
+		margin-top: 60px;
+		margin-bottom: 30px;
+	}
 }
-
+.read-more-toggle i{
+	padding: 0 10px;
+}
+#relatedWork header{
+	margin: 60px 0;
+}
 
 
 
