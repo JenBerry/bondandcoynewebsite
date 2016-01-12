@@ -144,6 +144,12 @@ dl.awards{
 	}
 }
 
+#workDesc{
+	@include breakpoint(large){
+		float:right;
+	}
+}
+
 .hMargin{
 	margin-left: 10px;
 	margin-right: 10px;
