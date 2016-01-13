@@ -9,14 +9,24 @@ To be handed over to their Back End Developer for integration into Craft CMS (ht
 
 How to run this site:
 
+get the code
 ```bash
 $git clone git@github.com:JenBerry/bondandcoynewebsite.git
+```
+Install twig
+```bash
 $cd bondandcoynewebsite/
 $composer install
+```
+Install foundation from foundation folder
+```bash
 $cd public/foundation/
 $npm install
 $bower install
 $npm start
+```
+run server from public folder
+```bash
 $cd ../
 $php -S localhost:3000
 ```
