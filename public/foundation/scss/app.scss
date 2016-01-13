@@ -74,6 +74,14 @@ address{font-style: normal}
 .caps{text-transform: capitalize;}
 .underline{text-decoration: underline;}
 .bigger{font-size: rem-calc(20pt);}
+.gray-bg{background-color: $medium-gray;}
+.white-bg{background-color: $white}
+.underline-link{
+	border-bottom: 1px solid $secondary-color;
+	&:hover{
+		text-decoration: none;
+	}
+}
 .strong-title{
 	@extend h3;
 	font-size: rem-calc(14pt);
@@ -109,11 +117,8 @@ dl.awards{
 	padding: 0;
 	line-height: 1.5;
 }
-.logo-footer{
-	background-color: $medium-gray;
-}
-#pageFooter address a{
-	border-bottom: 1px solid $medium-gray;
+.button.hollow.secondary{
+	border-width:2px;
 }
 
 
@@ -179,6 +184,7 @@ dl.awards{
 	@include breakpoint(medium) {
 		position: absolute;
 		width:100%;
+		z-index: 3;
 	}
 	#companyTitle{
 		height:rem-calc(80px);
@@ -186,6 +192,51 @@ dl.awards{
 		padding-left: rem-calc(114px);
 		background-color: $white;
 	}
+}
+#mainMenuPane{
+	display:none;
+	.background{
+		position:absolute;
+		width:100%;
+		z-index: -1;
+	}
+	@include breakpoint(medium){
+		.foreground{
+			position: absolute;
+			width:50%;
+			z-index:2;
+			top:0;
+			right:0;
+		}
+	}
+	
+}
+#mainMenuColumnContainer{
+	margin: 0 -18px;
+	padding: 0 18px;
+	overflow: hidden;
+	@include breakpoint(medium){
+		margin: 0;
+		padding: 0;
+	}
+}
+#mainMenuColumn{
+	font-size: 2rem;
+	@include breakpoint(medium){
+		margin-top:80px;
+	}
+	.menu a{
+		padding: 1em 0;
+	}
+}
+#mainMenuMapContainer,#mainMenuMapSpacer{
+	height:400px;
+	iframe{
+		width:100%;
+	}
+}
+#pageContent{
+	min-height:80px;
 }
 .primaryFooterLogo{margin: 0 30px;}
 #footerSocial{
