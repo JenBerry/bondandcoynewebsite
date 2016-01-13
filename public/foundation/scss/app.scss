@@ -46,6 +46,25 @@
 
 /* -------- Bond & Coyne styles --------- */
 /* styling */
+h1{
+	font-weight: 300;
+	font-family: $alt-font-family;
+	line-height: 1;
+}
+h2{font-weight: 300;}
+h3{
+	text-transform: uppercase;
+	color: $secondary-color;
+	font-weight: bold;
+}
+cite{
+	font-style: normal;
+	&:before{
+		content: "";
+	}
+}
+address{font-style: normal}
+
 .font-bold{font-weight: 700;}
 .font-light{font-weight: 300;}
 .font-thin{font-weight: 100;}
@@ -56,35 +75,13 @@
 .underline{text-decoration: underline;}
 .bigger{font-size: rem-calc(20pt);}
 .strong-title{
-	text-transform: uppercase;
-	color: $secondary-color;
-	font-weight: bold;
+	@extend h3;
 	font-size: rem-calc(14pt);
 }
 .muted{
 	color: $medium-gray
 }
-h1{
-	font-weight: 300;
-	font-family: $alt-font-family;
-	line-height: 1;
-}
-h2{
-	font-weight: 300;
-}
-h3{
-	text-transform: uppercase;
-	color: $secondary-color;
-	font-weight: 700;
-	margin-bottom: 0.3rem;
-}
-cite{
-	font-style: normal;
-	&:before{
-		content: "";
-	}
-}
-address{font-style: normal}
+
 dl.awards{
 	color: $medium-gray;
 	dt{
@@ -101,7 +98,6 @@ dl.awards{
 	background-color: $white;
 	color: $medium-gray;
 }
-
 .logo-footer{
 	background-color: $medium-gray;
 }
@@ -111,48 +107,13 @@ dl.awards{
 
 
 
-/* layout */
-#pageHeader{
-	font-size: rem-calc(20px);
-	@include breakpoint(medium) {
-		position: absolute;
-		width:100%;
-	}
-	.button{
-		margin:0;
-		height:rem-calc(80px);
-		width: rem-calc(80px);
-		font-size: rem-calc(13pt);
-		padding: 0;
-		line-height: 1.5;
-	}
-	#companyTitle{
-		height:rem-calc(80px);
-		line-height:rem-calc(80px);
-		padding-left: rem-calc(114px);
-		background-color: $white;
-	}
-}
-
-#footerSocial{
-	margin-top:20px;
-	i{
-		padding: 0 15px;
-		@include breakpoint(medium){
-			padding:0 0 0 30px;
-		}
-	}
-}
-
-#workDesc{
+/*--- layout ---*/
+/* general */
+.large-float-right{
 	@include breakpoint(large){
 		float:right;
 	}
 }
-#imageList img{
-	max-width:1300px;
-}
-
 .hMargin{
 	margin-left: 10px;
 	margin-right: 10px;
@@ -162,11 +123,15 @@ dl.awards{
 	}
 }
 .vMargin{
-	margin-top:60px;
-	margin-bottom:60px;
+	margin-top:30px;
+	margin-bottom:30px;
+	@include breakpoint(medium){
+		margin-top:60px;
+		margin-bottom:60px;
+	}
 }
-
-#workPage{
+.read-more-toggle i{padding: 0 10px;}
+.read-more-container{
 	overflow: hidden;
 	position: relative;
 	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
@@ -192,24 +157,52 @@ dl.awards{
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fefefe', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
 		}
 	}
+}
+/* base */
+#pageHeader{
+	font-size: rem-calc(20px);
+	@include breakpoint(medium) {
+		position: absolute;
+		width:100%;
+	}
+	.button{
+		margin:0;
+		height:rem-calc(80px);
+		width: rem-calc(80px);
+		font-size: rem-calc(13pt);
+		padding: 0;
+		line-height: 1.5;
+	}
+	#companyTitle{
+		height:rem-calc(80px);
+		line-height:rem-calc(80px);
+		padding-left: rem-calc(114px);
+		background-color: $white;
+	}
+}
+.primaryFooterLogo{margin: 0 30px;}
+#footerSocial{
+	margin-top:20px;
+	i{
+		padding: 0 15px;
+		@include breakpoint(medium){
+			padding:0 0 0 30px;
+		}
+	}
+}
+
+/* work */
+#workPage{
 	h1{
 		margin-top:0;
 	}
 	h2{
 		margin-top:12px;
 	}
-	margin-top:25px;
-	@include breakpoint(large){
-		margin-top: 60px;
-		margin-bottom: 30px;
-	}
 }
-.read-more-toggle i{
-	padding: 0 10px;
-}
-
-.primaryFooterLogo{
-	margin: 0 30px;
+#imageList img{
+	max-width:1300px;
+	width:100%;
 }
 
 
