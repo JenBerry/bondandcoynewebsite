@@ -7,15 +7,20 @@ Using the twig PHP templating framework (http://twig.sensiolabs.org/)
 To be handed over to their Back End Developer for integration into Craft CMS (http://craftcms.com)
 
 
-How to run this site:
+**How to run this site:**
+
+Dependencies
+* composer
+* npm
+* bower
 
 get the code
 ```bash
 $git clone git@github.com:JenBerry/bondandcoynewebsite.git
-```
-Install twig
-```bash
 $cd bondandcoynewebsite/
+```
+Install twig with composer
+```bash
 $composer install
 ```
 Install foundation from foundation folder
