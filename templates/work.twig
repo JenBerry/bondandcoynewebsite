@@ -1,10 +1,12 @@
 {% extends "_base.twig" %}
 {% block title %}{% endblock %}
 {% block content %}
+<div class="expanded row collapse">
+	<img class="small-12 columns" src="img/aub1.jpg" alt="Main image">
+</div>
+
+{% include '_social.twig' %}
 <section id="workSection">
-	<div class="expanded row collapse">
-		<img class="small-12 columns" src="img/aub1.jpg" alt="Main image">
-	</div>
 	<article id="workPage" class="hMargin vMargin truncated read-more-container">
 		<div class="row trucateContent">
 			<div class="small-12 medium-6 columns">
@@ -15,7 +17,7 @@
 				</heading>
 				<hr class="show-for-large-only">
 			</div>
-			<div class="small-12 large-6 columns font-light muted large-float-right">
+			<div class="small-12 medium-11 large-6 columns font-light muted large-float-right">
 				<hr class="hide-for-large">
 				<h3>Problem</h3>
 				<p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>
@@ -28,7 +30,7 @@
 				<p></p>
 				<hr class="hide-for-large">
 			</div>
-			<div class="extraInfo small-12 large-6 columns end">
+			<div class="extraInfo medium-11 small-12 large-6 columns end">
 				<blockquote>
 					<p class="alt-font font-light bigger">In a time when student recruitment is turbulent, Bond and Coyne has helped us to deliver where it counts: 11.2% increase on applications as an institution against a sector average of 2.5%</p>
 					<footer>
@@ -96,5 +98,4 @@
 		{% endfor %}
 	</div>
 </section>
-
 {% endblock %}

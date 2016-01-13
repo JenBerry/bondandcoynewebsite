@@ -97,6 +97,17 @@ dl.awards{
 .button.white{
 	background-color: $white;
 	color: $medium-gray;
+	&:hover{
+		background-color: $light-gray;
+	}
+}
+.button.square{
+	margin:0;
+	height:rem-calc(80px);
+	width: rem-calc(80px);
+	font-size: rem-calc(13pt);
+	padding: 0;
+	line-height: 1.5;
 }
 .logo-footer{
 	background-color: $medium-gray;
@@ -120,6 +131,10 @@ dl.awards{
 	@include breakpoint(medium) {
 		margin-left: 15px;
 		margin-right: 15px;
+	}
+	@include breakpoint(large){
+		margin-left:50px;
+		margin-right:50px;
 	}
 }
 .vMargin{
@@ -165,14 +180,6 @@ dl.awards{
 		position: absolute;
 		width:100%;
 	}
-	.button{
-		margin:0;
-		height:rem-calc(80px);
-		width: rem-calc(80px);
-		font-size: rem-calc(13pt);
-		padding: 0;
-		line-height: 1.5;
-	}
 	#companyTitle{
 		height:rem-calc(80px);
 		line-height:rem-calc(80px);
@@ -187,6 +194,37 @@ dl.awards{
 		padding: 0 15px;
 		@include breakpoint(medium){
 			padding:0 0 0 30px;
+		}
+	}
+}
+
+/* social */
+.social-snap-container{
+	@include breakpoint(medium){
+		z-index: 2;
+		position: relative;
+	}
+	#socialButtons{
+		position: absolute;
+		top:80px;
+		left:0;
+		@include breakpoint(medium){
+			left:auto;
+			right:0;
+		}
+		i{
+				font-size: 2rem;
+		}
+		.menu{
+			display: none;
+			.button{
+				border: 1px solid $light-gray;
+			}
+			li{
+				@include breakpoint(medium){
+					display: block;
+				}
+			}
 		}
 	}
 }
