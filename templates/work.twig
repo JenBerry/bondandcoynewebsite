@@ -2,7 +2,7 @@
 {% block title %}{% endblock %}
 {% block content %}
 <section id="workSection">
-	<div class="row collapse">
+	<div class="expanded row collapse">
 		<img class="small-12 columns" src="img/aub1.jpg" alt="Main image">
 	</div>
 	<article id="workPage" class="hMargin truncated">
@@ -57,29 +57,31 @@
 	</div>
 </section>
 <section id="imageList">
-	<div class="row collapse">
-		{% set images = [
-			'img/prospectus.jpg',
-			'img/copyline.jpg',
-			'img/prospectus1.jpg',
-			'img/socialmediaphone.jpg',
-			'img/bus.jpg',
-			'img/journey.jpg',
-			'img/journeystops.gif',
-			'img/courseguides.jpg',
-			'img/banners.jpg',
-			'img/totebag.jpg'
-		] %}
-		{% for image in images %}
-			<img class="small-12 columns" src="{{ image }}" alt="Image">
-		{% endfor %}
+	<div class="expanded row collapse">
+		<div class="small-12 columns text-center">
+			{% set images = [
+				'img/prospectus.jpg',
+				'img/copyline.jpg',
+				'img/prospectus1.jpg',
+				'img/socialmediaphone.jpg',
+				'img/bus.jpg',
+				'img/journey.jpg',
+				'img/journeystops.gif',
+				'img/courseguides.jpg',
+				'img/banners.jpg',
+				'img/totebag.jpg'
+			] %}
+			{% for image in images %}
+				<img src="{{ image }}" alt="Image">
+			{% endfor %}
+		</div>
 	</div>
 </section>
 <section id="relatedWork">
 	<header class="row column vMargin">
 		<h1 class="hMargin">Related Work</h1>
 	</header>
-	<div class="row collapse">
+	<div class="expanded row collapse">
 		{% set relatedImages = [
 			'img/aub1.jpg',
 			'img/aecc-email.jpg',

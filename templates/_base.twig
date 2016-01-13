@@ -30,28 +30,30 @@
 	{% endblock %}
 	<footer id="pageFooter">
 		<div class="logo-footer">
-			<div class="row hMargin">
-				<div class="small-12 medium-10 large-6 columns medium-centered text-center vMargin">
-					{% set primaryFooterLogos = [
-						'img/footerLogos/CIM_full.png',
-						'img/footerLogos/gea-logo-eu-white.png'
-					] %}
-					{% for logo in primaryFooterLogos %}
-						<img class="primaryFooterLogo" src="{{logo}}" alt="" style="max-height:80px;">
-					{% endfor %}
-					<hr>
-					<div class="row">
-					{% set secondaryFooterLogos = [
-						'img/footerLogos/accred.png',
-						'img/footerLogos/CIM.png',
-						'img/footerLogos/google-partner-badge.png',
-						'img/footerLogos/RAR_logo--white.png'
-					] %}
-					{% for logo in secondaryFooterLogos %}
-						<div class="small-6 medium-3 columns">
-							<img src="{{logo}}" alt="">
+			<div class="hMargin">
+				<div class="row">
+					<div class="small-12 medium-10 large-6 columns medium-centered text-center vMargin">
+						{% set primaryFooterLogos = [
+							'img/footerLogos/CIM_full.png',
+							'img/footerLogos/gea-logo-eu-white.png'
+						] %}
+						{% for logo in primaryFooterLogos %}
+							<img class="primaryFooterLogo" src="{{logo}}" alt="" style="max-height:80px;">
+						{% endfor %}
+						<hr>
+						<div class="row">
+						{% set secondaryFooterLogos = [
+							'img/footerLogos/accred.png',
+							'img/footerLogos/CIM.png',
+							'img/footerLogos/google-partner-badge.png',
+							'img/footerLogos/RAR_logo--white.png'
+						] %}
+						{% for logo in secondaryFooterLogos %}
+							<div class="small-6 medium-3 columns">
+								<img src="{{logo}}" alt="">
+							</div>
+						{% endfor %}
 						</div>
-					{% endfor %}
 					</div>
 				</div>
 			</div>
