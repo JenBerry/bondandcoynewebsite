@@ -5,8 +5,8 @@
 	<div class="row collapse">
 		<img class="small-12 columns" src="img/aub1.jpg" alt="Main image">
 	</div>
-	<article id="workPage" class="hMargin">
-		<div class="row">
+	<article id="workPage" class="hMargin truncated">
+		<div class="row trucateContent">
 			<div class="small-12 medium-6 columns">
 				<heading>
 					<h1>Award Winning Education Campeign</h1>
@@ -46,12 +46,15 @@
 				</dl>
 			</div>
 		</div>
-		<div class="row">
-			<div class="small-12 columns text-center">
-				<button class="button white font-light read-more-toggle" type="button"> <i class="fi-minus alt-color"></i> Read Less</button>
-			</div>
-		</div>
+		<div class="fadeout"></div>
 	</article>
+	<div class="row">
+		<div class="small-12 columns text-center">
+			<button onclick="showToggle($('#workPage'),$(this))" class="button white font-light read-more-toggle" type="button">
+				<i class="fi-plus alt-color"></i> Read More
+			</button>
+		</div>
+	</div>
 </section>
 <section id="imageList">
 	<div class="row collapse">
@@ -94,4 +97,7 @@
 
 	
 </div>
+<script>
+
+</script>
 {% endblock %}
