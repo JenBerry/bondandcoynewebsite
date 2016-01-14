@@ -2,7 +2,7 @@
 	<div class="gray-bg">
 		<div class="hMargin">
 			<div class="row">
-				<div class="small-12 medium-10 large-6 columns medium-centered text-center vMargin">
+				<div class="small-12 medium-10 large-8 columns medium-centered text-center">
 					{% set primaryFooterLogos = [
 						'img/footerLogos/CIM_full.png',
 						'img/footerLogos/gea-logo-eu-white.png'
@@ -20,7 +20,7 @@
 					] %}
 					{% for logo in secondaryFooterLogos %}
 						<div class="small-6 medium-3 columns">
-							<img src="{{logo}}" alt="">
+							<img class="secondary-footer-logos" src="{{logo}}" alt="">
 						</div>
 					{% endfor %}
 					</div>

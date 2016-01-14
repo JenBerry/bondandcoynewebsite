@@ -58,51 +58,63 @@
 			</div>
 		</div>
 	</section>
-	<section id="imageList">
-		<div class="expanded row muted">
-				{% set images = [
-					{'img':'img/AUB_7u5c9874.jpg', 'layout':'full', 'text':''},
-					{'img':'img/B&C_UCAS_31.JPG', 'layout':'full', 'text':''},
-					{'img':'img/totebag.jpg', 'layout':'right', 'text':'<h3>Ucas Stand</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
-					{'img':'img/B&C_UCAS_307.JPG', 'layout':'full', 'text':''},
-					{'img':'img/AUB_7u5c9940.jpg', 'layout':'left', 'text':'<h3>Prospectus</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
-					{'img':'img/B&C_UCAS_167.JPG', 'layout':'full', 'text':''},
-					{'img':'img/B&C_UCAS_185.JPG', 'layout':'full', 'text':''},
-					{'img':'img/courseguides.jpg', 'layout':'full', 'text':''},
-				] %}
+	<section id="imageList" class="muted">
+		{% set images = [
+			{'img':'img/AUB_7u5c9874.jpg', 'layout':'full', 'text':''},
+			{'img':'img/B&C_UCAS_31.JPG', 'layout':'full', 'text':''},
+			{'img':'img/totebag.jpg', 'layout':'right', 'text':'<h3>Ucas Stand</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
+			{'img':'img/B&C_UCAS_307.JPG', 'layout':'full', 'text':''},
+			{'img':'img/AUB_7u5c9940.jpg', 'layout':'left', 'text':'<h3>Prospectus</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
+			{'img':'img/B&C_UCAS_167.JPG', 'layout':'full', 'text':''},
+			{'img':'img/B&C_UCAS_185.JPG', 'layout':'full', 'text':''},
+			{'img':'img/courseguides.jpg', 'layout':'full', 'text':''},
+		] %}
 
-				{% for image in images %}
-					{% if image.layout == 'left' %}
-						<div class="small-12 large-8 columns">
-							<img src="{{ image.img }}" alt="Image">
-						</div>
-						<div class="small-12 large-4 columns">
-							<div class="hMargin-right vMargin">
-								{{ image.text|raw }}
-							</div>
-						</div>
-					{% elseif image.layout == 'right' %}
-						<div class="small-12 large-4 columns">
-							<div class="hMargin-left vMargin">
-								{{ image.text|raw }}
-							</div>
-						</div>
-						<div class="small-12 large-8 columns">
-							<img src="{{ image.img }}" alt="Image">
-						</div>
-					{% else %}
-						<div class="small-12 columns text-center">
-							<img src="{{ image.img }}" alt="Image">
-						</div>
-					{% endif %}
+		{% for image in images %}
+			{% if image.layout == 'left' %}
 
-				{% endfor %}
-		</div>
+			<div class="row expanded">
+				<div class="small-12 large-8 columns">
+					<img src="{{ image.img }}" alt="Image">
+				</div>
+				<div class="small-12 large-4 columns">
+					<div class="vMargin imageText">
+						{{ image.text|raw }}
+					</div>
+				</div>
+			</div>
+
+			{% elseif image.layout == 'right' %}
+
+			<div class="row expanded">
+				<div class="small-12 large-4 columns">
+					<div class="vMargin imageText">
+						{{ image.text|raw }}
+					</div>
+				</div>
+				<div class="small-12 large-8 columns">
+					<img src="{{ image.img }}" alt="Image">
+				</div>
+			</div>
+
+			{% else %}
+			<div class="row expanded">
+				<div class="small-12 columns text-center">
+					<img src="{{ image.img }}" alt="Image">
+				</div>
+			</div>
+
+			{% endif %}
+
+		{% endfor %}
 	</section>
 	<section id="relatedWork">
-		<header class="row column vMargin">
-			<h1 class="hMargin">Related Work</h1>
-		</header>
+		<div class="hMargin">
+			<header class="row column">
+				<hr>
+				<h1 class="muted vMargin">Related Work</h1>
+			</header>
+		</div>
 		<div class="expanded row collapse">
 			{% set relatedImages = [
 				'img/aub1.jpg',
