@@ -279,21 +279,37 @@ dl.awards{
 }
 
 /* social */
+.social-button-container{
+	width: 80px;
+	position: absolute;
+	right:0;
+}
 .social-snap-container{
+	height: auto!important;
+	position: static;
 	@include breakpoint(medium){
 		z-index: 2;
 		position: relative;
 	}
 	#socialButtons{
-		position: absolute;
-		top:80px;
+		top:0;
 		left:0;
+		@include breakpoint(medium down){
+			position: absolute;
+		}
 		@include breakpoint(medium){
-			left:auto;
+			left:auto!important;
 			right:0;
+			// position: static;
 		}
 		i{
 				font-size: 2rem;
+		}
+		#socialMenuButton{
+			margin-top:80px;
+			@include breakpoint(medium){
+				margin-top: 0;
+			}
 		}
 		.menu{
 			display: none;

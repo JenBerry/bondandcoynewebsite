@@ -4,118 +4,119 @@
 <div class="expanded row collapse">
 	<img class="small-12 columns" src="img/aub1.jpg" alt="Main image">
 </div>
+<div id="socialContainer">
+	{% include '_social.twig' %}
+	<section id="workSection">
+		<article id="workPage" class="hMargin vMargin truncated read-more-container">
+			<div class="row trucateContent">
+				<div class="small-12 medium-6 columns">
+					<heading>
+						<h1>Award Winning Education Campeign</h1>
+						<h2>Building a brand strategy by breaking the rules of what a prospectus should be</h2>
+						<p class="strong-title">Arts University Bournemouth</p>
+					</heading>
+					<hr class="show-for-large">
+				</div>
+				<div class="small-12 medium-11 large-6 columns font-light muted large-float-right">
+					<hr class="hide-for-large">
+					<h3>Problem</h3>
+					<p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>
+					<p >Unlike the interactive nature of online, the printed prospectus struggled to truly reflect the creative and collaborative environment of AUB. The breadth of content it covered and its physicality made it both costly to print and post to enquirers.</p>
+					<h3>Solution</h3>
+					<p>We saw an opportunity to make the traditional prospectus work harder. Rather than competing against a website, where information could easily be updated, it could serve as a signpost to the best of AUB online. More than that, by giving the prospectus an entirely new format, it could stand on its own as a symbol of creativity — reflecting AUB's brand and product better than ever before.</p>
+					<p>Playing to the strength of print — its physicality — we designed a set of interlocking cards with headline information, student work, photography and links to course pages on AUB's website. The interlocking cards could be built into structures that became mini versions of AUB's campus, where courses mix together in one creative space.</p>
+					<h3>Results</h3>
+					<p>In its its first three years, the House of Cards prospectus helped to deliver a 27% rise in applications to AUB. It gained press coverage at local and national level, and has won at European Excellence Awards, HEIST, and the Brand Impact Awards.As well as reducing costs for print and postage, the House of Cards has been adopted as an engagement tool across the university's Widening Participation and International departments. By encouraging prospective students to share what they build, it has become a mainstay of social media surrounding AUB.</p>
+					<p></p>
+					<hr class="hide-for-large">
+				</div>
+				<div class="extraInfo medium-11 small-12 large-6 columns end">
+					<blockquote>
+						<p class="alt-font font-light bigger no-margin">In a time when student recruitment is turbulent, Bond and Coyne has helped us to deliver where it counts: 11.2% increase on applications as an institution against a sector average of 2.5%</p>
+						<footer>
+							<cite class="strong-title margin-top">Simon Pride, Head of Marketing</cite>
+						</footer>
+					</blockquote>
+					<hr>
+					<dl class="awards">
+						<dt>Company Brochure Winner</dt>
+						<dd>European Excellence Awards, 2014</dd>
+						<dt>Education Campaign of the Year</dt>
+						<dd>Brand Impact Awards , 2014</dd>
+						<dt>Gold Award Best Specialist Prospectus</dt>
+						<dd>Heist Awards, 2013</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="fadeout"></div>
+		</article>
+		<div class="row">
+			<div class="small-12 columns text-center">
+				<button onclick="showToggle($('#workPage'),$(this))" class="button white font-light read-more-toggle" type="button">
+					<img src="img/icons/plus.png" alt=""> Read More
+				</button>
+			</div>
+		</div>
+	</section>
+	<section id="imageList">
+		<div class="expanded row muted">
+				{% set images = [
+					{'img':'img/AUB_7u5c9874.jpg', 'layout':'full', 'text':''},
+					{'img':'img/B&C_UCAS_31.JPG', 'layout':'full', 'text':''},
+					{'img':'img/totebag.jpg', 'layout':'right', 'text':'<h3>Ucas Stand</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
+					{'img':'img/B&C_UCAS_307.JPG', 'layout':'full', 'text':''},
+					{'img':'img/AUB_7u5c9940.jpg', 'layout':'left', 'text':'<h3>Prospectus</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
+					{'img':'img/B&C_UCAS_167.JPG', 'layout':'full', 'text':''},
+					{'img':'img/B&C_UCAS_185.JPG', 'layout':'full', 'text':''},
+					{'img':'img/courseguides.jpg', 'layout':'full', 'text':''},
+				] %}
 
-{% include '_social.twig' %}
-<section id="workSection">
-	<article id="workPage" class="hMargin vMargin truncated read-more-container">
-		<div class="row trucateContent">
-			<div class="small-12 medium-6 columns">
-				<heading>
-					<h1>Award Winning Education Campeign</h1>
-					<h2>Building a brand strategy by breaking the rules of what a prospectus should be</h2>
-					<p class="strong-title">Arts University Bournemouth</p>
-				</heading>
-				<hr class="show-for-large">
-			</div>
-			<div class="small-12 medium-11 large-6 columns font-light muted large-float-right">
-				<hr class="hide-for-large">
-				<h3>Problem</h3>
-				<p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>
-				<p >Unlike the interactive nature of online, the printed prospectus struggled to truly reflect the creative and collaborative environment of AUB. The breadth of content it covered and its physicality made it both costly to print and post to enquirers.</p>
-				<h3>Solution</h3>
-				<p>We saw an opportunity to make the traditional prospectus work harder. Rather than competing against a website, where information could easily be updated, it could serve as a signpost to the best of AUB online. More than that, by giving the prospectus an entirely new format, it could stand on its own as a symbol of creativity — reflecting AUB's brand and product better than ever before.</p>
-				<p>Playing to the strength of print — its physicality — we designed a set of interlocking cards with headline information, student work, photography and links to course pages on AUB's website. The interlocking cards could be built into structures that became mini versions of AUB's campus, where courses mix together in one creative space.</p>
-				<h3>Results</h3>
-				<p>In its its first three years, the House of Cards prospectus helped to deliver a 27% rise in applications to AUB. It gained press coverage at local and national level, and has won at European Excellence Awards, HEIST, and the Brand Impact Awards.As well as reducing costs for print and postage, the House of Cards has been adopted as an engagement tool across the university's Widening Participation and International departments. By encouraging prospective students to share what they build, it has become a mainstay of social media surrounding AUB.</p>
-				<p></p>
-				<hr class="hide-for-large">
-			</div>
-			<div class="extraInfo medium-11 small-12 large-6 columns end">
-				<blockquote>
-					<p class="alt-font font-light bigger no-margin">In a time when student recruitment is turbulent, Bond and Coyne has helped us to deliver where it counts: 11.2% increase on applications as an institution against a sector average of 2.5%</p>
-					<footer>
-						<cite class="strong-title margin-top">Simon Pride, Head of Marketing</cite>
-					</footer>
-				</blockquote>
-				<hr>
-				<dl class="awards">
-					<dt>Company Brochure Winner</dt>
-					<dd>European Excellence Awards, 2014</dd>
-					<dt>Education Campaign of the Year</dt>
-					<dd>Brand Impact Awards , 2014</dd>
-					<dt>Gold Award Best Specialist Prospectus</dt>
-					<dd>Heist Awards, 2013</dd>
-				</dl>
-			</div>
+				{% for image in images %}
+					{% if image.layout == 'left' %}
+						<div class="small-12 large-8 columns">
+							<img src="{{ image.img }}" alt="Image">
+						</div>
+						<div class="small-12 large-4 columns">
+							<div class="hMargin-right vMargin">
+								{{ image.text|raw }}
+							</div>
+						</div>
+					{% elseif image.layout == 'right' %}
+						<div class="small-12 large-4 columns">
+							<div class="hMargin-left vMargin">
+								{{ image.text|raw }}
+							</div>
+						</div>
+						<div class="small-12 large-8 columns">
+							<img src="{{ image.img }}" alt="Image">
+						</div>
+					{% else %}
+						<div class="small-12 columns text-center">
+							<img src="{{ image.img }}" alt="Image">
+						</div>
+					{% endif %}
+
+				{% endfor %}
 		</div>
-		<div class="fadeout"></div>
-	</article>
-	<div class="row">
-		<div class="small-12 columns text-center">
-			<button onclick="showToggle($('#workPage'),$(this))" class="button white font-light read-more-toggle" type="button">
-				<img src="img/icons/plus.png" alt=""> Read More
-			</button>
-		</div>
-	</div>
-</section>
-<section id="imageList">
-	<div class="expanded row muted">
-			{% set images = [
-				{'img':'img/AUB_7u5c9874.jpg', 'layout':'full', 'text':''},
-				{'img':'img/B&C_UCAS_31.JPG', 'layout':'full', 'text':''},
-				{'img':'img/totebag.jpg', 'layout':'right', 'text':'<h3>Ucas Stand</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
-				{'img':'img/B&C_UCAS_307.JPG', 'layout':'full', 'text':''},
-				{'img':'img/AUB_7u5c9940.jpg', 'layout':'left', 'text':'<h3>Prospectus</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
-				{'img':'img/B&C_UCAS_167.JPG', 'layout':'full', 'text':''},
-				{'img':'img/B&C_UCAS_185.JPG', 'layout':'full', 'text':''},
-				{'img':'img/courseguides.jpg', 'layout':'full', 'text':''},
+	</section>
+	<section id="relatedWork">
+		<header class="row column vMargin">
+			<h1 class="hMargin">Related Work</h1>
+		</header>
+		<div class="expanded row collapse">
+			{% set relatedImages = [
+				'img/aub1.jpg',
+				'img/aecc-email.jpg',
+				'img/ellie.jpg'
 			] %}
-
-			{% for image in images %}
-				{% if image.layout == 'left' %}
-					<div class="small-12 medium-8 columns">
-						<img src="{{ image.img }}" alt="Image">
-					</div>
-					<div class="small-12 medium-4 columns">
-						<div class="hMargin-right vMargin">
-							{{ image.text|raw }}
-						</div>
-					</div>
-				{% elseif image.layout == 'right' %}
-					<div class="small-12 medium-4 columns">
-						<div class="hMargin-left vMargin">
-							{{ image.text|raw }}
-						</div>
-					</div>
-					<div class="small-12 medium-8 columns">
-						<img src="{{ image.img }}" alt="Image">
-					</div>
-				{% else %}
-					<div class="small-12 columns text-center">
-						<img src="{{ image.img }}" alt="Image">
-					</div>
-				{% endif %}
-
+			{% for image in relatedImages %}
+				<div class="small-12 medium-4 columns">
+					<a href="">
+						<img src="{{ image }}" alt="">
+					</a>
+				</div>
 			{% endfor %}
-	</div>
-</section>
-<section id="relatedWork">
-	<header class="row column vMargin">
-		<h1 class="hMargin">Related Work</h1>
-	</header>
-	<div class="expanded row collapse">
-		{% set relatedImages = [
-			'img/aub1.jpg',
-			'img/aecc-email.jpg',
-			'img/ellie.jpg'
-		] %}
-		{% for image in relatedImages %}
-			<div class="small-12 medium-4 columns">
-				<a href="">
-					<img src="{{ image }}" alt="">
-				</a>
-			</div>
-		{% endfor %}
-	</div>
-</section>
+		</div>
+	</section>
+</div>
 {% endblock %}
