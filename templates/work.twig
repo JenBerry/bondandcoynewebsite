@@ -15,7 +15,7 @@
 					<h2>Building a brand strategy by breaking the rules of what a prospectus should be</h2>
 					<p class="strong-title">Arts University Bournemouth</p>
 				</heading>
-				<hr class="show-for-large-only">
+				<hr class="show-for-large">
 			</div>
 			<div class="small-12 medium-11 large-6 columns font-light muted large-float-right">
 				<hr class="hide-for-large">
@@ -32,9 +32,9 @@
 			</div>
 			<div class="extraInfo medium-11 small-12 large-6 columns end">
 				<blockquote>
-					<p class="alt-font font-light bigger">In a time when student recruitment is turbulent, Bond and Coyne has helped us to deliver where it counts: 11.2% increase on applications as an institution against a sector average of 2.5%</p>
+					<p class="alt-font font-light bigger no-margin">In a time when student recruitment is turbulent, Bond and Coyne has helped us to deliver where it counts: 11.2% increase on applications as an institution against a sector average of 2.5%</p>
 					<footer>
-						<cite class="strong-title">Simon Pride, Head of Marketing</cite>
+						<cite class="strong-title margin-top">Simon Pride, Head of Marketing</cite>
 					</footer>
 				</blockquote>
 				<hr>
@@ -53,30 +53,50 @@
 	<div class="row">
 		<div class="small-12 columns text-center">
 			<button onclick="showToggle($('#workPage'),$(this))" class="button white font-light read-more-toggle" type="button">
-				<i class="fi-plus alt-color"></i> Read More
+				<img src="img/icons/plus.png" alt=""> Read More
 			</button>
 		</div>
 	</div>
 </section>
 <section id="imageList">
-	<div class="expanded row collapse">
-		<div class="small-12 columns text-center">
+	<div class="expanded row">
 			{% set images = [
-				'img/prospectus.jpg',
-				'img/copyline.jpg',
-				'img/prospectus1.jpg',
-				'img/socialmediaphone.jpg',
-				'img/bus.jpg',
-				'img/journey.jpg',
-				'img/journeystops.gif',
-				'img/courseguides.jpg',
-				'img/banners.jpg',
-				'img/totebag.jpg'
+				{'img':'img/AUB_7u5c9874.jpg', 'layout':'full', 'text':''},
+				{'img':'img/B&C_UCAS_31.JPG', 'layout':'full', 'text':''},
+				{'img':'img/totebag.jpg', 'layout':'right', 'text':'<h3>Ucas Stand</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
+				{'img':'img/B&C_UCAS_307.JPG', 'layout':'full', 'text':''},
+				{'img':'img/AUB_7u5c9940.jpg', 'layout':'left', 'text':'<h3>Prospectus</h3> <p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>'},
+				{'img':'img/B&C_UCAS_167.JPG', 'layout':'full', 'text':''},
+				{'img':'img/B&C_UCAS_185.JPG', 'layout':'full', 'text':''},
+				{'img':'img/courseguides.jpg', 'layout':'full', 'text':''},
 			] %}
+
 			{% for image in images %}
-				<img src="{{ image }}" alt="Image">
+				{% if image.layout == 'left' %}
+					<div class="small-12 medium-8 columns">
+						<img src="{{ image.img }}" alt="Image">
+					</div>
+					<div class="small-12 medium-4 columns">
+						<div class="hMargin-right vMargin">
+							{{ image.text|raw }}
+						</div>
+					</div>
+				{% elseif image.layout == 'right' %}
+					<div class="small-12 medium-4 columns">
+						<div class="hMargin-left vMargin">
+							{{ image.text|raw }}
+						</div>
+					</div>
+					<div class="small-12 medium-8 columns">
+						<img src="{{ image.img }}" alt="Image">
+					</div>
+				{% else %}
+					<div class="small-12 columns text-center">
+						<img src="{{ image.img }}" alt="Image">
+					</div>
+				{% endif %}
+
 			{% endfor %}
-		</div>
 	</div>
 </section>
 <section id="relatedWork">

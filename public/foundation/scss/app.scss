@@ -56,6 +56,8 @@ h3{
 	text-transform: uppercase;
 	color: $secondary-color;
 	font-weight: bold;
+	letter-spacing: rem-calc(2px);
+	margin-bottom: rem-calc(2px);
 }
 cite{
 	font-style: normal;
@@ -73,7 +75,7 @@ address{font-style: normal}
 .upper{text-transform: uppercase;}
 .caps{text-transform: capitalize;}
 .underline{text-decoration: underline;}
-.bigger{font-size: rem-calc(20pt);}
+.bigger{font-size: rem-calc(23px);}
 .gray-bg{background-color: $medium-gray;}
 .white-bg{background-color: $white}
 .underline-link{
@@ -85,6 +87,9 @@ address{font-style: normal}
 .strong-title{
 	@extend h3;
 	font-size: rem-calc(14pt);
+	&.margin-top {
+		margin-top:0.7rem;
+	}
 }
 .muted{
 	color: $medium-gray
@@ -95,7 +100,7 @@ dl.awards{
 	dt{
 		font-family: $alt-font-family;
 		font-weight: 300;
-		font-size: rem-calc(19pt);
+		font-size: rem-calc(22px);
 		margin-top: 0.8rem;
 	}
 	dd{
@@ -113,9 +118,17 @@ dl.awards{
 	margin:0;
 	height:rem-calc(80px);
 	width: rem-calc(80px);
-	font-size: rem-calc(13pt);
+	font-size: rem-calc(13px);
 	padding: 0;
 	line-height: 1.5;
+	letter-spacing: 2px;
+	&.icon-text img{
+		margin-bottom: 1.2em;
+		margin-top: 0.3em;
+	}
+	&:hover, &:focus{
+		color: $secondary-color;
+	}
 }
 .button.hollow.secondary{
 	border-width:2px;
@@ -125,22 +138,35 @@ dl.awards{
 
 /*--- layout ---*/
 /* general */
+.no-margin{
+	margin:0;
+}
 .large-float-right{
 	@include breakpoint(large){
 		float:right;
 	}
 }
-.hMargin{
+.hMargin-left{
 	margin-left: 10px;
-	margin-right: 10px;
 	@include breakpoint(medium) {
 		margin-left: 15px;
-		margin-right: 15px;
 	}
 	@include breakpoint(large){
 		margin-left:50px;
+	}
+}
+.hMargin-right{
+	margin-right: 10px;
+	@include breakpoint(medium) {
+		margin-right: 15px;
+	}
+	@include breakpoint(large){
 		margin-right:50px;
 	}
+}
+.hMargin{
+	@extend hMargin-left;
+	@extend hMargin-right;
 }
 .vMargin{
 	margin-top:30px;
@@ -150,7 +176,10 @@ dl.awards{
 		margin-bottom:60px;
 	}
 }
-.read-more-toggle i{padding: 0 10px;}
+.read-more-toggle{
+	margin-bottom: rem-calc(60px);
+	img{padding: 0 14px 0 0;}
+}
 .read-more-container{
 	overflow: hidden;
 	position: relative;
@@ -241,7 +270,7 @@ dl.awards{
 .primaryFooterLogo{margin: 0 30px;}
 #footerSocial{
 	margin-top:20px;
-	i{
+	img{
 		padding: 0 15px;
 		@include breakpoint(medium){
 			padding:0 0 0 30px;
@@ -288,10 +317,20 @@ dl.awards{
 	h2{
 		margin-top:12px;
 	}
+	heading{
+		max-width: rem-calc(400px);
+		display:block;
+	}
 }
-#imageList img{
+#imageList{
 	max-width:1300px;
-	width:100%;
+	margin:auto;
+	.columns{
+		margin-bottom: 30px;
+	}
+	img{
+		width:100%;
+	}
 }
 
 

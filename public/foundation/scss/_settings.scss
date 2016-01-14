@@ -44,7 +44,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 90%;
+$global-font-size: 100%;
 $global-width: rem-calc(1120);
 $global-lineheight: 1.5;
 $primary-color: #404041;
@@ -140,7 +140,7 @@ $anchor-text-decoration: none;
 $anchor-text-decoration-hover: underline;
 $hr-width: $global-width;
 $hr-border: 1px solid $light-gray;
-$hr-margin: rem-calc(40px) auto;
+$hr-margin: rem-calc(56px) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
@@ -232,7 +232,7 @@ $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: scale-color($button-background, $lightness: 15%);
 $button-color: #fff;
 $button-color-alt: #000;
 $button-radius: $global-radius;

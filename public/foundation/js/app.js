@@ -3,12 +3,12 @@ $(document).foundation();
 
 function showToggle($container,$button){
 	if ($container.hasClass('truncated')){
-		$button.html('<i class="fi-minus alt-color"></i> Read Less');
+		$button.html('<img src="img/icons/minus.png" alt=""> Read Less');
 		$contentHeight = $container.children($('.trucateContent')).height();
 		$container.css('height',$contentHeight);
 	}
 	else{
-		$button.html('<i class="fi-plus alt-color"></i> Read More');
+		$button.html('<img src="img/icons/plus.png" alt=""> Read More');
 	}
 
 	$container.toggleClass('truncated');
@@ -18,7 +18,7 @@ function showMenu(){
 	$screenHeight = $(window).height();
 	$('.screenHeight').css('min-height',$screenHeight);
 
-	$("#mainMenuButton").html('<i class="fi-x"></i><br><span>Close</span>');
+	$("#mainMenuButton").html('<img src="img/icons/cross.png" alt=""><br><span>Close</span>');
 	$("#mainMenuPane").show();
 	$('#hideOnMenu').hide();
 
@@ -31,7 +31,7 @@ function showMenu(){
 	});
 }
 function hideMenu(){
-	$("#mainMenuButton").html('<i class="fi-list"></i><br><span>Menu</span>');
+	$("#mainMenuButton").html('<img src="img/icons/menu.png" alt=""><br><span>Menu</span>');
 	$("#mainMenuPane").hide();
 	$('#hideOnMenu').show();
 }
@@ -42,3 +42,8 @@ function toggleMenu(){
 		{hideMenu();}
 	
 }
+
+
+
+
+
