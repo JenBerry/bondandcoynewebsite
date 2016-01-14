@@ -165,8 +165,8 @@ dl.awards{
 	}
 }
 .hMargin{
-	@extend hMargin-left;
-	@extend hMargin-right;
+	@extend .hMargin-left;
+	@extend .hMargin-right;
 }
 .vMargin{
 	margin-top:30px;
