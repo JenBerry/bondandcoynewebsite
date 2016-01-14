@@ -11,20 +11,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
-	<header id="pageHeader" class="row collapse expanded">
-		<div class="small-12 medium-6 large-6 columns">
-			<button id="mainMenuButton" onClick="toggleMenu()" class="button float-left alt-color font-bold upper square icon-text">
-				<img src="img/icons/menu.png" alt=""><br>
-				<span>Menu</span>
-			</button>
-			{% block headerText %}
-			<div id='companyTitle' class="alt-color alt-font">Bond & Coyne</div>
-			{% endblock %}
-		</div>
-		<div class="medium-6 large-8 show-for-medium columns">
-			
-		</div>
-	</header>
+	{% include '_header.twig' %}
 	{% include '_menu.twig' %}
 	<div id="hideOnMenu">
 		<div id="pageContent">
@@ -32,55 +19,7 @@
 				Content goes here
 			{% endblock %}
 		</div>
-		{% block pageFooter %}
-		<footer id="pageFooter">
-			<div class="gray-bg">
-				<div class="hMargin">
-					<div class="row">
-						<div class="small-12 medium-10 large-6 columns medium-centered text-center vMargin">
-							{% set primaryFooterLogos = [
-								'img/footerLogos/CIM_full.png',
-								'img/footerLogos/gea-logo-eu-white.png'
-							] %}
-							{% for logo in primaryFooterLogos %}
-								<img class="primaryFooterLogo" src="{{logo}}" alt="" style="max-height:80px;">
-							{% endfor %}
-							<hr>
-							<div class="row">
-							{% set secondaryFooterLogos = [
-								'img/footerLogos/accred.png',
-								'img/footerLogos/CIM.png',
-								'img/footerLogos/google-partner-badge.png',
-								'img/footerLogos/RAR_logo--white.png'
-							] %}
-							{% for logo in secondaryFooterLogos %}
-								<div class="small-6 medium-3 columns">
-									<img src="{{logo}}" alt="">
-								</div>
-							{% endfor %}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="hMargin vMargin">
-				<div class="row muted text-center">
-					<div class="small-12 medium-8 columns medium-text-left">
-						<address class="font-light">
-							<span class="strong-title muted">Bond & Coyne</span><br>
-							+44 (0) 20 3567 1100<br>
-							<a class="underline-link muted"  href="">hello@bondandcoyne.co.uk</a>
-						</address>
-					</div>
-					<div id="footerSocial" class="small-12 medium-4 columns medium-text-right">
-						<a href=""><img src="img/icons/twitter-gray.png" alt=""></a>
-						<a href=""><img src="img/icons/linked-in-gray.png" alt=""></i></a>
-						<a href=""><img src="img/icons/vimeo-gray.png" alt=""></a>
-					</div>
-				</div>
-			</div>
-		</footer>
-		{% endblock %}
+		{% include '_footer.twig' %}
 	</div>
 	
 	<script src="foundation/bower_components/jquery/dist/jquery.js"></script>
