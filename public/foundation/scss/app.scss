@@ -207,7 +207,7 @@ dl.awards{
 		}
 	}
 }
-/* base */
+/* header */
 #pageHeader{
 	font-size: rem-calc(20px);
 	@include breakpoint(medium) {
@@ -220,8 +220,10 @@ dl.awards{
 		line-height:rem-calc(80px);
 		padding-left: rem-calc(114px);
 		background-color: $white;
+		border: 1px solid $light-gray;
 	}
 }
+/* menu */
 #mainMenuPane{
 	display:none;
 	.background{
@@ -264,9 +266,11 @@ dl.awards{
 		width:100%;
 	}
 }
+/* content */
 #pageContent{
 	min-height:80px;
 }
+/* footer */
 .primaryFooterLogo{margin: 0 30px;}
 #footerSocial{
 	margin-top:20px;
