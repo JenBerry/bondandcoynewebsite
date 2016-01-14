@@ -45,7 +45,7 @@
 
 
 /* -------- Bond & Coyne styles --------- */
-/* styling */
+/* general styling */
 h1{
 	font-weight: 300;
 	font-family: $alt-font-family;
@@ -94,19 +94,6 @@ address{font-style: normal}
 .muted{
 	color: $medium-gray
 }
-
-dl.awards{
-	color: $medium-gray;
-	dt{
-		font-family: $alt-font-family;
-		font-weight: 300;
-		font-size: rem-calc(22px);
-		margin-top: 0.8rem;
-	}
-	dd{
-		@extend .strong-title;
-	}
-}
 .button.white{
 	background-color: $white;
 	color: $medium-gray;
@@ -135,9 +122,7 @@ dl.awards{
 }
 
 
-
-/*--- layout ---*/
-/* general */
+/* general layout */
 .no-margin{
 	margin:0;
 }
@@ -210,17 +195,25 @@ dl.awards{
 /* header */
 #pageHeader{
 	font-size: rem-calc(20px);
+	z-index: 3;
 	@include breakpoint(medium) {
 		position: absolute;
 		width:100%;
 		z-index: 3;
+	}
+	.is-stuck #companyTitle{
+		border: 1px solid $light-gray;
 	}
 	#companyTitle{
 		height:rem-calc(80px);
 		line-height:rem-calc(80px);
 		padding-left: rem-calc(114px);
 		background-color: $white;
-		border: 1px solid $light-gray;
+		cursor: pointer;
+		transition: background-color 0.25s ease-out, color 0.25s ease-out;
+		&:hover{
+			background-color: $light-gray;
+		}
 	}
 }
 /* menu */
@@ -256,7 +249,7 @@ dl.awards{
 	@include breakpoint(medium){
 		margin-top:80px;
 	}
-	.menu a{
+	.menu a, .menu button{
 		padding: 1em 0;
 	}
 }
@@ -356,6 +349,18 @@ dl.awards{
 	}
 	img{
 		width:100%;
+	}
+}
+dl.awards{
+	color: $medium-gray;
+	dt{
+		font-family: $alt-font-family;
+		font-weight: 300;
+		font-size: rem-calc(22px);
+		margin-top: 0.8rem;
+	}
+	dd{
+		@extend .strong-title;
 	}
 }
 

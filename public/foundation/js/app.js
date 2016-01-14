@@ -45,6 +45,12 @@ function toggleMenu(){
 function backToTop(){
   $("html, body").animate({ scrollTop: 0 }, "slow");
 }
+function scrollToElement($element, offset){
+	$('html,body').animate({
+		'scrollTop': $element.offset().top-offset},
+		1000);
+}
+
 
 
 
