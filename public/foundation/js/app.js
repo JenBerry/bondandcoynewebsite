@@ -16,7 +16,6 @@ function showToggle($container,$button){
 
 function showMenu(){
 	$screenHeight = $(window).height();
-console.log('screen height: ' + $screenHeight);
 	$('.screenHeight').css('min-height',$screenHeight);
 
 	$("#mainMenuButton").html('<i class="fi-x"></i><br><span>Close</span>');
@@ -26,10 +25,7 @@ console.log('screen height: ' + $screenHeight);
 	$element = $('#mainMenuColumn ul');
 	$containerHeight = $screenHeight - 80;
 	$elementHeight = $element.outerHeight(true);
-console.log('element height: ' + $elementHeight);
 	$elementPosition = $containerHeight/2 - $elementHeight/2;
-console.log($containerHeight + '/2 - ' + $elementHeight + '/2');
-console.log($containerHeight/2 + ' - ' + $elementHeight/2 + ' = ' + $elementPosition);
 	$('#centerMenuSpace').css({
 		'height': $elementPosition
 	});

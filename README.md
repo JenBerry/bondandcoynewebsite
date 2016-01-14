@@ -28,6 +28,9 @@ Install foundation from foundation folder
 $cd public/foundation/
 $npm install
 $bower install
+```
+compile sass
+```bash
 $npm start
 ```
 run server from public folder
