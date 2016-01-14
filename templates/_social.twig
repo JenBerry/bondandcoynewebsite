@@ -1,9 +1,12 @@
 <div class="social-snap-container" data-sticky-container>
-	<div id="socialButtons" class="sticky" data-sticky data-options="stickyOn:large; anchor:socialContainer;marginTop:5">
-		<button onClick="$('#socialButtons .menu').slideToggle('slow');" id="socialMenuButton" class="button alt-color square">
+	<div id="socialButtons" class="sticky" data-sticky data-options="stickyOn:large; anchor:socialContainer;marginTop:0">
+		<button id="topButton" onClick="backToTop();" class="button white square">
+			<img src="img/icons/up-chevron.png" alt=""><br>
+		</button><!--
+		--><button onClick="$('#socialButtons .menu').slideToggle('slow');" id="socialMenuButton" class="button alt-color square">
 			<img src="img/icons/share.png" alt=""><br>
 		</button>
-		<ul class="menu">
+		<ul class="menu text-right">
 			<li><button type="button" class="button white square">
 				<img src="img/icons/twitter.png" alt="">
 			</button></li>

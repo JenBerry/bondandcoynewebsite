@@ -311,16 +311,22 @@ dl.awards{
 				margin-top: 0;
 			}
 		}
+		.white.button{
+			border: 1px solid $light-gray;
+		}
 		.menu{
 			display: none;
-			.button{
-				border: 1px solid $light-gray;
-			}
 			li{
 				@include breakpoint(medium){
 					display: block;
 				}
 			}
+		}
+		#topButton{
+			display: none;
+		}
+		&.is-stuck #topButton{
+			display:inline;
 		}
 	}
 }

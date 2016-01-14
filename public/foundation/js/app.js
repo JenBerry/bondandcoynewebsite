@@ -42,6 +42,10 @@ function toggleMenu(){
 		{hideMenu();}
 	
 }
+function backToTop(){
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+}
+
 
 
 
