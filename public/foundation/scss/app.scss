@@ -47,7 +47,7 @@
 /* -------- Bond & Coyne styles --------- */
 /* general styling */
 *{
-	outline: 1px solid $medium-gray;
+	// outline: 1px solid $medium-gray;
 }
 h1{
 	font-weight: 300;
@@ -80,6 +80,8 @@ address{font-style: normal}
 .underline{text-decoration: underline;}
 .bigger{font-size: rem-calc(23px);}
 .gray-bg{background-color: $medium-gray;}
+.light-gray-bg{background-color: $light-gray}
+.light-gray-bg hr{border-color: $white}
 .white-bg{background-color: $white}
 .underline-link{
 	border-bottom: 1px solid $secondary-color;
@@ -87,19 +89,12 @@ address{font-style: normal}
 		text-decoration: none;
 	}
 }
-.strong-title{
-	@extend h3;
-	font-size: rem-calc(14pt);
-	&.margin-top {
-		margin-top:0.7rem;
-	}
-}
 .muted{
 	color: $medium-gray
 }
 .button.white{
 	background-color: $white;
-	color: $medium-gray;
+	color: $black;
 	&:hover{
 		background-color: $light-gray;
 	}
@@ -122,6 +117,13 @@ address{font-style: normal}
 }
 .button.hollow.secondary{
 	border-width:2px;
+}
+.strong-title, button.white.strong-title{
+	@extend h3;
+	font-size: rem-calc(14pt);
+	&.margin-top {
+		margin-top:0.7rem;
+	}
 }
 
 
@@ -272,6 +274,11 @@ address{font-style: normal}
 #pageContent{
 	min-height:80px;
 }
+.clear-header{
+	@include breakpoint(medium){
+		margin-top:80px;
+	}
+}
 /* footer */
 #pageFooter .gray-bg{
 	padding: 60px 0 43px;
@@ -347,6 +354,31 @@ address{font-style: normal}
 	}
 }
 
+/* index */
+.button.view-work{
+	font-size: rem-calc(18px);
+	border: 1px solid $light-gray;
+}
+#indexPage nav ul
+{
+	list-style: none;
+	margin-bottom:0;
+	button{
+		border: 1px solid $light-gray;
+		border-width: 0 1px 0 0;
+	}
+	li:last-child button{
+		border-right-width: 0;
+	}
+}
+#newsList{
+	img{
+		width:100%
+	}
+}
+.news-tile{
+	border: 1px solid $white;
+}
 /* work */
 #workPage{
 	h1{
@@ -361,18 +393,43 @@ address{font-style: normal}
 	}
 }
 #imageList{
-	max-width:1300px;
-	margin: 0 auto -30px;
+	margin: 0 10px -20px;
+	max-width: 1360px;
+	@include breakpoint(medium){
+		margin: 0 15px -30px;
+	}
+	@include breakpoint(large){
+		margin: 0 auto -30px;
+	}
 	.columns{
-		margin-bottom: 30px;
+		margin-bottom: 20px;
+		@include breakpoint(medium){
+			margin-bottom: 20px;
+		}
 	}
 	img{
 		width:100%;
+		max-width:1300px;
 	}
 	.imageText{
-		padding: 0 10px;
+		padding: 6px 10px 0;
+		margin-bottom: -23px;
 		@include breakpoint(medium){
-			padding: 0
+			padding: 36px 0 3px;
+			margin-bottom: 0;
+		}
+		p{
+			line-height: 1.4;
+		}
+	}
+	.left-text .imageText{
+		@include breakpoint(large){
+			padding: 36px 0 7px 60px;
+		}
+	}
+	.right-text .imageText{
+		@include breakpoint(large){
+			padding: 36px 60px 7px 0;
 		}
 	}
 }

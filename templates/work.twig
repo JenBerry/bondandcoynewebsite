@@ -52,7 +52,7 @@
 		</article>
 		<div class="row">
 			<div class="small-12 columns text-center">
-				<button onclick="showToggle($('#workPage'),$(this))" class="button white font-light read-more-toggle" type="button">
+				<button onclick="showToggle($('#workPage'),$(this))" class="button white font-light read-more-toggle muted" type="button">
 					<img src="img/icons/plus.png" alt=""> Read More
 				</button>
 			</div>
@@ -73,12 +73,12 @@
 		{% for image in images %}
 			{% if image.layout == 'left' %}
 
-			<div class="row expanded">
+			<div class="row expanded right-text">
 				<div class="small-12 large-8 columns">
 					<img src="{{ image.img }}" alt="Image">
 				</div>
-				<div class="small-12 large-4 columns">
-					<div class="vMargin imageText">
+				<div class="small-12 medium-11 large-4 columns left end">
+					<div class="imageText">
 						{{ image.text|raw }}
 					</div>
 				</div>
@@ -86,9 +86,9 @@
 
 			{% elseif image.layout == 'right' %}
 
-			<div class="row expanded">
-				<div class="small-12 large-4 columns">
-					<div class="vMargin imageText">
+			<div class="row expanded left-text">
+				<div class="small-12 medium-11 large-4 columns">
+					<div class="imageText">
 						{{ image.text|raw }}
 					</div>
 				</div>
