@@ -42,6 +42,12 @@ function toggleMenu(){
 		{hideMenu();}
 	
 }
+
+function toggleFilter($filters,$button){
+	$filters.slideToggle('slow');
+	$button.toggleClass('open');
+}
+
 function backToTop(){
   $("html, body").animate({ scrollTop: 0 }, "slow");
 }
