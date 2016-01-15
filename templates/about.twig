@@ -1,0 +1,155 @@
+{% extends "_base.twig" %}
+{% block title %}About - {% endblock %}
+{% block content %}
+<div class="row expanded collapse">
+	<div class="columns small-12 large-6 clear-header">
+		<h1 class="muted font-light">We help organisations and individuals spread ideas that capture people’s attention and make a positive difference to revenues, causes and reputations.</h1>
+	</div>
+	<div class="columns large-6 show-for-large">
+		<img src="img/about.jpg" alt="">
+	</div>
+</div>
+<div class="hMargin">
+	<div class="row">
+		<div class="columns small-12 large-4">
+			<h1>Our Services</h1>
+		</div>
+		<div class="columns small-12 large-8">
+			<div class="row">
+				<div class="columns small-12 medium-6">
+					<h3>Definition</h3>
+					<p>
+						We work to define our clients' brand today and what their brand will be tomorrow. By defining what makes them unique, we enable them to confidently and powerfully enter their market. Through strategic processes, we deliver strong brand positioning that defines how a brand can create real distinction within its sector, extending its reputation, reach and influence.
+					</p>
+				</div>
+				<div class="columns small-12 medium-6">
+					<h3>Creation</h3>
+					<p>
+						We design compelling brand identities that reflect our clients ambitions. We deliver the visual tools necessary for a comprehensive approach to brand communication – way beyond the logo alone – that enable positive brand interactions with customers.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-12 medium-6">
+					<hr>
+					<p>
+						Brand proposition development<br>
+						Brand positioning<br>
+						Strategic planning
+					</p>
+				</div>
+				<div class="columns small-12 medium-6">
+					<hr>
+					<p>
+						Brand identity
+						Logos
+						Brand guidelines
+						Photography
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-12 medium-6">
+					<h3>Interaction</h3>
+					<p>
+						We create digital and physical interactions that help our clients to engage with their audiences in new and exciting ways. We harness the opportunities made possible by new technologies and materials to build interactions that reinforce a brand and provide opportunities to start conversations with target audiences. From the phone screen through to stands at exhibitions, we build interactions that carry our clients’ distinctive signatures.
+					</p>
+				</div>
+				<div class="columns small-12 medium-6">
+					<h3>Awareness</h3>
+					<p>
+						We deliver marketing campaigns that increase awareness of our clients' brands. With a proven track record of achieving impactful results, we find innovative ways of matching a brand's message with the needs of its audiences. We then craft powerful multi-disciplinary ways to propagate brand messages so they can spread and spread.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-12 medium-6">
+					<hr>
+					<p>
+						Website design and build<br>
+						App development<br>
+						Exhibition and stand design
+					</p>
+				</div>
+				<div class="columns small-12 medium-6">
+					<hr>
+					<p>
+						Marketing campaigns<br>
+						PR-generating projects<br>
+						Social media strategies
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-12 medium-6">
+					<h3>Communication</h3>
+					<p>
+						We specialise in telling complex stories simply. Working closely with clients and stakeholders, we distill important messages and write, edit and design communications that make those messages digestible. We are expert at designing communications across all print and digital media formats and work efficiently to produce on-budget, on-time and on-brand collateral for our clients.
+					</p>
+				</div>
+				<div class="columns small-12 medium-6">
+					<h3>Development</h3>
+					<p>
+						We help businesses to do things differently. We develop new services and products that enable our clients to standout in their sector. Whether driven by efficiency, recruitment or sales needs, our user-focused approach means we can produce solutions that re-think our clients’ internal processes as well as how they serve their customers.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-12 medium-6">
+					<hr>
+					<p>
+						Animations<br>
+						Brochures and reports<br>
+						Marketing collateral
+					</p>
+				</div>
+				<div class="columns small-12 medium-6">
+					<hr>
+					<p>
+						Business proposition development<br>
+						Service creation<br>
+						New communication formats<br>
+						New ways to manage marketing
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row expanded collapse">
+	<div class="columns small-12">
+		<img src="img/about2.jpg" alt="">
+	</div>
+</div>
+<div class="hMargin">
+	<div class="row column">
+		<h1>Our Team</h1>
+	</div>
+</div>
+<div class="row expanded collapse small-up-1 medium-up-2 large-up-4">
+	{% set teamImages = [
+		'img/team/one.jpg',
+		'img/team/eight.jpg',
+		'img/team/nine.jpg',
+		'img/team/two.jpg',
+		'img/team/three.jpg',
+		'img/team/four.jpg',
+		'img/team/five.jpg',
+		'img/team/six.jpg',
+		'img/team/seven.jpg',
+	] %}
+	{% for image in teamImages %}
+	<div class="columns"><img src="{{image}}" alt=""></div>
+	{% endfor %}
+</div>
+<div class="hMargin">
+	<div class="row column">
+		<h1>We have worked with some great people</h1>
+	</div>
+</div>
+<div class="hMargin">
+	<div class="row column">
+		<img src="img/partners.jpg" alt="">
+	</div>
+</div>
+{% endblock %}
