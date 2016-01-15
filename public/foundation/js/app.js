@@ -17,6 +17,7 @@ function showToggle($container,$button){
 function showMenu(){
 	$screenHeight = $(window).height();
 	$('.screenHeight').css('min-height',$screenHeight);
+	$('.halfScreenHeight').css('min-height',$screenHeight/2);
 
 	$("#mainMenuButton").html('<img src="img/icons/cross.png" alt=""><br><span>Close</span>');
 	$("#mainMenuPane").show();
@@ -56,12 +57,7 @@ function scrollToElement($element, offset){
 		'scrollTop': $element.offset().top-offset},
 		1000);
 }
-function getAverageColor($element){
-	console.log($element.prop('nodeName'))
-	var colorThief = new ColorThief();
-	$color = colorThief.getColor($element);
-	console.log($color);
-}
+
 
 
 

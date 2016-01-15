@@ -53,8 +53,12 @@ h1{
 	font-weight: 300;
 	font-family: $alt-font-family;
 	line-height: 1;
+	color: $black;
 }
-h2{font-weight: 300;}
+h2{
+	font-weight: 300;
+	color: $black;
+}
 h3{
 	text-transform: uppercase;
 	color: $secondary-color;
@@ -64,6 +68,11 @@ h3{
 }
 p{
 	font-weight: 300;
+}
+a img:hover{
+	opacity: 0.7;
+	-webkit-transition: opacity 0.25s ease-out; /* For Safari 3.1 to 6.0 */
+	transition: opacity 0.25s ease-out;
 }
 cite{
 	font-style: normal;
@@ -78,6 +87,8 @@ address{font-style: normal}
 .font-thin{font-weight: 100;}
 .alt-font{font-family: $alt-font-family;}
 .alt-color{color: $secondary-color;}
+.black-color{color:$black;}
+.gray-color{color:$medium-gray;}
 .upper{text-transform: uppercase;}
 .caps{text-transform: capitalize;}
 .underline{text-decoration: underline;}
@@ -92,9 +103,7 @@ address{font-style: normal}
 		text-decoration: none;
 	}
 }
-.muted{
-	color: $medium-gray
-}
+
 .button.white{
 	background-color: $white;
 	color: $black;
@@ -254,8 +263,8 @@ address{font-style: normal}
 	
 }
 #mainMenuColumnContainer{
-	margin: 0 -18px;
-	padding: 0 18px;
+	margin: 0 -30px;
+	padding: 0 30px;
 	overflow: hidden;
 	@include breakpoint(medium){
 		margin: 0;
@@ -263,18 +272,38 @@ address{font-style: normal}
 	}
 }
 #mainMenuColumn{
-	font-size: 2rem;
+	font-size: rem-calc(35px);
 	@include breakpoint(medium){
 		margin-top:80px;
 	}
-	.menu a, .menu button{
-		padding: 1em 0;
+	.menu{
+		margin: 66px 0;
+	}
+	.menu li{
+		padding: 20px 0;
+		@include breakpoint(medium){
+			padding: 40px 0;
+		}
+		a{
+			border-bottom: 3px solid $medium-gray;
+			display: inline;
+			padding: 0;
+		}
+		a:hover{
+			border-bottom: 3px solid $secondary-color; 
+			text-decoration: none;
+		}
 	}
 }
 #mainMenuMapContainer,#mainMenuMapSpacer{
-	height:400px;
 	iframe{
 		width:100%;
+	}
+	@include breakpoint(medium down){
+		min-height:400px!important;
+		iframe{
+			min-height:400px!important;
+		}
 	}
 }
 /* content */
@@ -362,6 +391,10 @@ address{font-style: normal}
 }
 
 /* index */
+.heading-text h1{
+	color: $medium-gray;
+	line-height: 1.25;
+}
 .heading-image{
 	width:50%;
 	float:right;
@@ -482,7 +515,6 @@ address{font-style: normal}
 	}
 }
 dl.awards{
-	color: $medium-gray;
 	dt{
 		font-family: $alt-font-family;
 		font-weight: 300;
