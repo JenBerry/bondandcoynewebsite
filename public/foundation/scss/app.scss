@@ -99,6 +99,9 @@ address{font-style: normal}
 		background-color: $light-gray;
 	}
 }
+.button.light-gray{
+	background-color: $light-gray;
+}
 .button.square{
 	margin:0;
 	height:rem-calc(80px);
@@ -125,6 +128,7 @@ address{font-style: normal}
 		margin-top:0.7rem;
 	}
 }
+
 
 
 /* general layout */
@@ -276,7 +280,7 @@ address{font-style: normal}
 }
 .clear-header{
 	@include breakpoint(medium){
-		margin-top:80px;
+		padding-top:80px;
 	}
 }
 /* footer */
@@ -358,8 +362,12 @@ address{font-style: normal}
 .button.view-work{
 	font-size: rem-calc(18px);
 	border: 1px solid $light-gray;
+	border-width: 1px 0 0;
 }
-#indexPage nav{
+
+/* work module */
+.work-module nav{
+	border-top: 1px solid $light-gray;
 	.filter-row{
 		list-style: none;
 		margin-bottom:0;
@@ -370,7 +378,7 @@ address{font-style: normal}
 			display: none;
 		}
 		@include breakpoint(medium){
-			display:inline!important;
+			display:block!important;
 		}
 	}
 	.button{
@@ -409,6 +417,9 @@ address{font-style: normal}
 .news-tile{
 	border: 1px solid $white;
 }
+/* work module */
+
+
 /* work */
 #workPage{
 	h1{

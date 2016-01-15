@@ -18,64 +18,10 @@
 			</button>
 		</div>
 	</div>
-	<nav>
-		<div class="row collapse">
-			<div class="columns small-12 medium-3 hide-for-medium">
-				<button onClick="toggleFilter($('.filter-row'),$(this))" class="button expanded white strong-title">
-					<img class="show-closed" src="img/icons/plus.png" alt=""><img class="show-open" src="img/icons/minus.png" alt="">Filter
-				</button>
-			</div>
-		</div>
-		<ul class="row collapse filter-row">
-			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
-					Education
-				</button>
-			</li>
-			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
-					Private Sector
-				</button>
-			</li>
-			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
-					Public Sector
-				</button>
-			</li>
-			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
-					Financial
-				</button>
-			</li>
-		</ul>
-	</nav>
-	<div class="imageTiles">
-		{% set images = [
-			"img/tiles/weatherspinners.png",
-			"img/tiles/totton.png",
-			"img/tiles/ellie.jpg",
-			"img/tiles/skillset.jpg",
-			"img/tiles/kscope.png",
-			"img/tiles/DNA.png",
-			"img/tiles/irc.jpg",
-			"img/tiles/aeccmobile.jpg",
-			"img/tiles/prospectus.jpg"
-		]%}
-		{% for image in images %}
-			{% if loop.index in [1,4,7] %}
-				<div class="row expanded collapse">
-			{% endif %}
-			<div class="columns small-12 medium-4">
-				<img src="{{image}}" alt="">
-			</div>
-			{% if loop.index in [3,6,9] %}
-				</div>
-			{% endif %}
-		{% endfor %}
-	</div>
+	{% include '_work_module.twig' %}
 	<div class="row">
 		<div class="columns small-12 text-center">
-			<button class="button hollow secondary" type=button>View All Work</button>
+			<a href="workmenu" class="button hollow secondary" type=button>View All Work</a>
 		</div>
 	</div>
 	<div class="light-gray-bg">

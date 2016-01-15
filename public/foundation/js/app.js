@@ -56,6 +56,12 @@ function scrollToElement($element, offset){
 		'scrollTop': $element.offset().top-offset},
 		1000);
 }
+function getAverageColor($element){
+	console.log($element.prop('nodeName'))
+	var colorThief = new ColorThief();
+	$color = colorThief.getColor($element);
+	console.log($color);
+}
 
 
 
