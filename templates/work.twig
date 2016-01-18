@@ -72,28 +72,27 @@
 
 		{% for image in images %}
 			{% if image.layout == 'left' %}
-
-			<div class="row expanded right-text collapse">
-				<div class="small-12 large-8 columns">
-					<img src="{{ image.img }}" alt="Image">
-				</div>
-				<div class="small-12 medium-11 large-4 columns left end">
-					<div class="imageText">
-						{{ image.text|raw }}
+			<img class="half-image left" src="{{ image.img }}" alt="Image">
+			<div class="hMargin">
+				<div class="row">
+					<div class="small-12 medium-11 large-6 columns end">
+						<div class="imageText right-text">
+							{{ image.text|raw }}
+						</div>
 					</div>
 				</div>
 			</div>
 
 			{% elseif image.layout == 'right' %}
 
-			<div class="row expanded left-text collapse">
-				<div class="small-12 medium-11 large-4 columns">
-					<div class="imageText">
-						{{ image.text|raw }}
+			<img class="half-image right" src="{{ image.img }}" alt="Image">
+			<div class="hMargin">
+				<div class="row left-text">
+					<div class="small-12 medium-11 large-6 end columns">
+						<div class="imageText left-text">
+							{{ image.text|raw }}
+						</div>
 					</div>
-				</div>
-				<div class="small-12 large-8 columns">
-					<img src="{{ image.img }}" alt="Image">
 				</div>
 			</div>
 
