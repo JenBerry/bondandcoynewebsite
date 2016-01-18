@@ -458,7 +458,6 @@ a.button:hover{
 
 /* work module */
 .work-module nav{
-	border-top: 1px solid $light-gray;
 	border-bottom: 1px solid $light-gray;
 	.filter-row{
 		list-style: none;
@@ -472,6 +471,19 @@ a.button:hover{
 		@include breakpoint(medium){
 			display:block!important;
 		}
+	}
+	.sticky-nav-container{
+		@include breakpoint(medium down){
+			height: auto!important;
+			.sticky-nav{
+				position: relative;
+			}
+		}
+	}
+	.sticky-nav{
+		width:100%;
+		border-top: 1px solid $light-gray;
+		background-color: $white;
 	}
 	.button{
 		border: 1px solid $light-gray;
