@@ -283,6 +283,9 @@ a.button:hover{
 		@include breakpoint(medium){
 			margin-bottom: 0;
 		}
+		.submit{
+			font-size: rem-calc(13px);
+		}
 	}
 	
 }
