@@ -233,16 +233,12 @@ a.button:hover{
 #pageHeader{
 	font-size: rem-calc(20px);
 	z-index: 3;
-	@include breakpoint(medium) {
-		position: absolute;
-		width:100%;
-		z-index: 3;
-	}
 	#companyTitle{
 		height:rem-calc(80px);
 		line-height:rem-calc(80px);
 		padding-left: rem-calc(114px);
 		background-color: $white;
+		border-bottom: 1px solid $light-gray;
 		cursor: pointer;
 		transition: background-color 0.25s ease-out, color 0.25s ease-out;
 		&:hover{
@@ -255,6 +251,7 @@ a.button:hover{
 	display:none;
 	.background{
 		position:absolute;
+		top:0;
 		width:100%;
 		z-index: -1;
 	}
@@ -300,9 +297,6 @@ a.button:hover{
 }
 #mainMenuColumn{
 	font-size: rem-calc(35px);
-	@include breakpoint(medium){
-		margin-top:80px;
-	}
 	.menu{
 		margin: 66px 0;
 	}
@@ -390,7 +384,7 @@ a.button:hover{
 	height: auto!important;
 	position: static;
 	@include breakpoint(medium){
-		z-index: 2;
+		z-index: 3;
 		position: relative;
 	}
 	#socialButtons{

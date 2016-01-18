@@ -17,7 +17,7 @@ function showToggle($container,$button){
 function showMenu(){
 	$screenHeight = $(window).height();
 	$('.screenHeight').css('min-height',$screenHeight);
-	$('.halfScreenHeight').css('min-height',$screenHeight/2);
+	$('.halfScreenHeight').css('min-height',($screenHeight-80)/2);
 
 	$("#mainMenuButton").html('<img src="img/icons/cross.png" alt=""><br><span>Close</span>');
 	$("#mainMenuPane").show();
