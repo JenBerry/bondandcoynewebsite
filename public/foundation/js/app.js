@@ -67,8 +67,7 @@ function verticalCenter($element, $container){
 
 
 
-// verticalCenter($(this).find('.desc'), $(this))
-$(document).ready(function(){
+$(window).on("load", function() {
 	$verticalCenterElements = $('.vertical-center');
 	$verticalCenterElements.each(function(){
 		$parent = $(this).closest($('.vertical-center-container'));

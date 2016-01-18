@@ -2,25 +2,29 @@
 {% block title %}{% endblock %}
 {% block content %}
 <div id="indexPage">
-	<div class="vertical-center-container header-height">
-		<img class="heading-image show-for-large" src="img/aub1-crop.jpg" alt="">
-		<div class="hMargin">
-			<div class="row">
-				<div class="columns vertical-center small-12 large-6 end heading-text">
-					<h1>Welcome to <span class="alt-color">Bond&Coyne</span>, an award winning branding agency delivering impactful and innovative solutions.</h1>
+	<section>
+		<div class="vertical-center-container header-height">
+			<img class="heading-image show-for-large" src="img/aub1-crop.jpg" alt="">
+			<div class="hMargin">
+				<div class="row">
+					<div class="columns vertical-center small-12 medium-10 medium-offset-1 end large-6 large-offset-0 end heading-text">
+						<h1>Welcome to <span class="alt-color">Bond&Coyne</span>, an award winning branding agency delivering impactful and innovative solutions.</h1>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row expanded collapse">
-		<div class="columns small-12 text-center">
-			<button type="button" class="button expanded white no-margin font-light view-work">
-				View our work<br>
-				<img src="img/icons/down-chevron.png" alt="">
-			</button>
+		<div class="row expanded collapse">
+			<div class="columns small-12 text-center">
+				<button type="button" onClick="scrollToElement($('#work-module-container'),0)" class="button expanded white no-margin font-light view-work">
+					View our work<br>
+					<img src="img/icons/down-chevron.png" alt="">
+				</button>
+			</div>
 		</div>
+	</section>
+	<div id="work-module-container">
+		{% include '_work_module.twig' with {'number_of_tiles_small': 4, 'number_of_tiles_medium':8, 'number_of_tiles_large':9 } %}
 	</div>
-	{% include '_work_module.twig' with {'number_of_tiles_small': 4, 'number_of_tiles_medium':8, 'number_of_tiles_large':9 } %}
 	<div class="row">
 		<div class="columns small-12 text-center">
 			<a href="workmenu" class="view-all-work-button button hollow secondary main-buttons" type='button'>View All Work</a>
@@ -48,7 +52,7 @@
 						</a>
 						<div class="desc">
 							<p class="alt-font">{{image.heading}}</p>
-							<a class="underline-link font-light" href="#">Read More</a>
+							<a class="underline-link font-light" href="/blog">Read More</a>
 						</div>
 					</div>
 				</article>
@@ -57,8 +61,8 @@
 			<div class="row column"><hr></div>
 			<div class="row">
 				<div class="columns small-12 text-center">
-					<a href="#" class="button hollow secondary show-for-large main-buttons" type=button>Read more</a>
-					<a href="#" class="underline-link hide-for-large more-posts-button font-light" type=button>More posts</a>
+					<a href="/blogmenu" class="button hollow secondary show-for-large main-buttons" type=button>Read more</a>
+					<a href="/blogmenu" class="underline-link hide-for-large more-posts-button font-light" type=button>More posts</a>
 				</div>
 			</div>
 		</div>

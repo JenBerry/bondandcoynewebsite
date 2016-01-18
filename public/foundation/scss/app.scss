@@ -327,7 +327,7 @@ a.button:hover{
 }
 .clear-header{
 	@include breakpoint(medium){
-		margin-top:80px;
+		padding-top:80px;
 	}
 }
 /* footer */
@@ -406,9 +406,11 @@ a.button:hover{
 }
 
 /* index */
-.heading-text h1{
-	color: $dark-gray;
-	line-height: 1.25;
+.heading-text{
+		h1{
+		color: $dark-gray;
+		line-height: 1.25;
+	}
 }
 .heading-image{
 	width:50%;
@@ -416,9 +418,11 @@ a.button:hover{
 }
 .button.view-work{
 	font-size: rem-calc(18px);
-	border: 1px solid $light-gray;
 	border-width: 1px 0 0;
 	padding: 46px 0 40px 0;
+	@include breakpoint(large){
+		border: 1px solid $light-gray;
+	}
 }
 .main-buttons{
 	@extend .strong-heading;
@@ -455,6 +459,7 @@ a.button:hover{
 /* work module */
 .work-module nav{
 	border-top: 1px solid $light-gray;
+	border-bottom: 1px solid $light-gray;
 	.filter-row{
 		list-style: none;
 		margin-bottom:0;
