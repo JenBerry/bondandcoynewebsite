@@ -103,6 +103,7 @@ address{font-style: normal}
 .white-bg{background-color: $white}
 .underline-link{
 	border-bottom: 1px solid $secondary-color;
+	padding-bottom: 3px;
 	&:hover{
 		text-decoration: none;
 	}
@@ -266,6 +267,23 @@ a.button:hover{
 			right:0;
 		}
 	}
+	.social-icons{
+		margin: 16px 0 40px 0;
+		@include breakpoint(large){
+			margin-bottom:60px;
+		}
+	}
+	form{
+		margin-top:10px;
+		margin-bottom: 44px;
+		input{
+			padding: 1.5em 1em;
+			border-width:2px;
+		}
+		@include breakpoint(medium){
+			margin-bottom: 0;
+		}
+	}
 	
 }
 #mainMenuColumnContainer{
@@ -300,6 +318,13 @@ a.button:hover{
 			text-decoration: none;
 		}
 	}
+}
+#mainMenuContact{
+	margin-top: 60px;
+	@include breakpoint(large){
+		margin-top: 30px;
+	}
+
 }
 #mainMenuMapContainer,#mainMenuMapSpacer{
 	iframe{
@@ -435,6 +460,9 @@ a.button:hover{
 }
 #newsList{
 	padding-top:60px;
+	heading{
+		display: block;
+	}
 	img{
 		width:100%
 	}
