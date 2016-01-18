@@ -65,13 +65,31 @@ function verticalCenter($element, $container){
 	$element.css('margin-top',$elementMargin);
 }
 
+function matchHeight($elementList){
+	$height = 0;
+	$elementList.each(function(){
+		$thisHeight = $(this).height();
+		if ($thisHeight > $height){
+			$height = $thisHeight;
+		}
+	});
+	$elementList.height($height);
+}
 
+$(document).ready(function(){
+});
 
 $(window).on("load", function() {
 	$verticalCenterElements = $('.vertical-center');
 	$verticalCenterElements.each(function(){
 		$parent = $(this).closest($('.vertical-center-container'));
 		verticalCenter($(this),$parent);
+	});
+
+	$matchHeightContainers = $('.match-height-container');
+	$matchHeightContainers.each(function(){
+		$elementList = $(this).find('.match-height');
+		matchHeight($elementList);
 	});
 });
 

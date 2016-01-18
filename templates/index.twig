@@ -38,7 +38,7 @@
 				</div>
 			</heading>
 			<div class="row column"><hr></div>
-			<div class="row">
+			<div class="row match-height-container">
 				{% set newsImages = [
 					{'img':'img/news-thumb/one.jpg', 'heading':'Award Winning Education Campaign'},
 					{'img':'img/news-thumb/two.jpg', 'heading':'A pitch winning week for B&C'},
@@ -46,13 +46,14 @@
 				] %}
 				{% for image in newsImages %}
 				<article class="columns small-12 medium-6 large-4 {% if loop.last %} show-for-large {% endif %}">
-					<div class="news-tile white-bg">
+					<div class="news-tile white-bg match-height">
 						<a href="#">
 							<img src="{{ image.img }}" alt="">
 						</a>
 						<div class="desc">
 							<p class="alt-font">{{image.heading}}</p>
-							<a class="underline-link font-light" href="/blog">Read More</a>
+							<a class="read-more-spacer underline-link font-light" href="/blog">Read More</a>
+							<a class="read-more underline-link font-light" href="/blog">Read More</a>
 						</div>
 					</div>
 				</article>

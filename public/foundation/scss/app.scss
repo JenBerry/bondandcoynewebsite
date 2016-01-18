@@ -466,6 +466,17 @@ a.button:hover{
 	heading{
 		display: block;
 	}
+	.news-tile{
+		position: relative;
+		.read-more{
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+		}
+		.read-more-spacer{
+			visibility: hidden;
+		}
+	}
 	img{
 		width:100%
 	}
