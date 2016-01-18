@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="imageList">
+	<section id="imageList" class="light-gray-bg">
 		{% set images = [
 			{'img':'img/AUB_7u5c9874.jpg', 'layout':'full', 'text':''},
 			{'img':'img/B&C_UCAS_31.JPG', 'layout':'full', 'text':''},
@@ -73,7 +73,7 @@
 		{% for image in images %}
 			{% if image.layout == 'left' %}
 
-			<div class="row expanded right-text">
+			<div class="row expanded right-text collapse">
 				<div class="small-12 large-8 columns">
 					<img src="{{ image.img }}" alt="Image">
 				</div>
@@ -86,7 +86,7 @@
 
 			{% elseif image.layout == 'right' %}
 
-			<div class="row expanded left-text">
+			<div class="row expanded left-text collapse">
 				<div class="small-12 medium-11 large-4 columns">
 					<div class="imageText">
 						{{ image.text|raw }}
@@ -98,7 +98,7 @@
 			</div>
 
 			{% else %}
-			<div class="row expanded">
+			<div class="row expanded collapse">
 				<div class="small-12 columns text-center">
 					<img src="{{ image.img }}" alt="Image">
 				</div>
@@ -111,7 +111,6 @@
 	<section id="relatedWork">
 		<div class="hMargin">
 			<header class="row column">
-				<hr>
 				<h1 class="vMargin">Related Work</h1>
 			</header>
 		</div>

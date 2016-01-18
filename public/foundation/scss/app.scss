@@ -561,43 +561,21 @@ a.button:hover{
 	}
 }
 #imageList{
-	margin: 0 10px -20px;
-	max-width: 1360px;
-	@include breakpoint(medium){
-		margin: 0 15px -30px;
-	}
-	@include breakpoint(large){
-		margin: 0 auto -30px;
-	}
-	.columns{
-		margin-bottom: 20px;
-		@include breakpoint(medium){
-			margin-bottom: 20px;
-		}
-	}
 	img{
 		width:100%;
-		max-width:1300px;
 	}
 	.imageText{
 		padding: 6px 10px 0;
 		margin-bottom: -23px;
 		@include breakpoint(medium){
-			padding: 36px 0 3px;
+			padding: 36px 30px 3px;
 			margin-bottom: 0;
+		}
+		@include breakpoint(large){
+			padding: 60px 60px 7px;
 		}
 		p{
 			line-height: 1.4;
-		}
-	}
-	.left-text .imageText{
-		@include breakpoint(large){
-			padding: 36px 0 7px 60px;
-		}
-	}
-	.right-text .imageText{
-		@include breakpoint(large){
-			padding: 36px 60px 7px 0;
 		}
 	}
 }
