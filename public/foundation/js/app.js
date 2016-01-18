@@ -64,35 +64,46 @@ function verticalCenter($element, $container){
 	$elementMargin = $containerHeight/2 - $elementHeight/2;
 	$element.css('margin-top',$elementMargin);
 }
+function setVerticalCenter(){
+	$verticalCenterElements = $('.vertical-center');
+	$verticalCenterElements.each(function(){
+		$parent = $(this).closest($('.vertical-center-container'));
+		verticalCenter($(this),$parent);
+	});
+}
 
 function matchHeight($elementList){
 	$height = 0;
 	$elementList.each(function(){
-		$thisHeight = $(this).height();
-		if ($thisHeight > $height){
-			$height = $thisHeight;
+		$contentHeight = $(this).find('.match-height-content').height();
+		if ($contentHeight > $height){
+			$height = $contentHeight;
 		}
 	});
 	$elementList.height($height);
+}
+function setMatchHeight(){
+	console.log('set match height');
+	$matchHeightContainers = $('.match-height-container');
+	$matchHeightContainers.each(function(){
+		$elementList = $(this).find('.match-height');
+		matchHeight($elementList);
+	});
+	
 }
 
 $(document).ready(function(){
 });
 
 $(window).on("load", function() {
-	$verticalCenterElements = $('.vertical-center');
-	$verticalCenterElements.each(function(){
-		$parent = $(this).closest($('.vertical-center-container'));
-		verticalCenter($(this),$parent);
-	});
-
-	$matchHeightContainers = $('.match-height-container');
-	$matchHeightContainers.each(function(){
-		$elementList = $(this).find('.match-height');
-		matchHeight($elementList);
-	});
+	setVerticalCenter();
+	setMatchHeight();
 });
 
+$( window ).resize(function(){
+	setVerticalCenter();
+	setMatchHeight();
+});
 
 
 

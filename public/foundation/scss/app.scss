@@ -466,6 +466,12 @@ a.button:hover{
 	heading{
 		display: block;
 	}
+	article{
+		margin-bottom: 30px;
+		@include breakpoint(medium){
+			margin-bottom: 0;
+		}
+	}
 	.news-tile{
 		position: relative;
 		.read-more{
@@ -487,7 +493,7 @@ a.button:hover{
 .news-tile{
 	border-bottom: 3px solid #acacac;
 	.desc{
-		margin:30px;
+		padding:30px;
 	}
 	p{
 		font-size: rem-calc(22px);
