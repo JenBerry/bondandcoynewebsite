@@ -1,30 +1,30 @@
-<div class="work-module">
+<section class="work-module">
 	<nav>
 		<div class="row collapse">
 			<div class="columns small-12 medium-3 hide-for-medium">
-				<button onClick="toggleFilter($('.filter-row'),$(this))" class="button expanded white strong-title">
+				<button onClick="toggleFilter($('.filter-row'),$(this))" class="button expanded white">
 					<img class="show-closed" src="img/icons/plus.png" alt=""><img class="show-open" src="img/icons/minus.png" alt="">Filter
 				</button>
 			</div>
 		</div>
 		<ul class="row collapse filter-row">
 			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
+				<button class="button expanded white">
 					Education
 				</button>
 			</li>
 			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
+				<button class="button expanded white">
 					Private Sector
 				</button>
 			</li>
 			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
+				<button class="button expanded white">
 					Public Sector
 				</button>
 			</li>
 			<li class="columns small-12 medium-3">
-				<button class="button expanded white strong-title">
+				<button class="button expanded white">
 					Financial
 				</button>
 			</li>
@@ -34,18 +34,25 @@
 		{% set images = [
 			"img/tiles/weatherspinners.png",
 			"img/tiles/totton.png",
-			"img/tiles/ellie.jpg",
 			"img/tiles/skillset.jpg",
+			"img/tiles/ellie.jpg",
 			"img/tiles/kscope.png",
 			"img/tiles/DNA.png",
 			"img/tiles/irc.jpg",
 			"img/tiles/aeccmobile.jpg",
-			"img/tiles/prospectus.jpg"
+			"img/tiles/prospectus.jpg",
+			"img/tiles/weatherspinners.png",
+			"img/tiles/totton.png",
+			"img/tiles/ellie.jpg",
 		]%}
-		{% for image in images %}
-			<div class="columns">
-				<img src="{{image}}" alt="" onClick="getAverageColor($(this))">
-			</div>
+		{% for image in images|slice(0,number_of_tiles_large) %}
+			<article class="columns vertical-center-container {% if number_of_tiles_medium and loop.index > number_of_tiles_medium %}show-for-large{% elseif number_of_tiles_small and loop.index > number_of_tiles_small %}show-for-medium{% endif %}" onClick="window.location.href = '/work';">
+				<img src="{{image}}" alt="" onClick="">
+				<div class="desc vertical-center">
+					<h3>Arts University Bournemouth</h3>
+					<h1><a href="/work" onClick="event.preventDefault();">Brand Strategy and an Award Winning Prospectus</a></h1>
+				</div>
+			</article>
 		{% endfor %}
 	</div>
-</div>
+</section>

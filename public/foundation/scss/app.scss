@@ -49,6 +49,13 @@
 *{
 	// outline: 1px solid $medium-gray;
 }
+.strong-heading{
+	text-transform: uppercase;
+	color: $secondary-color;
+	font-weight: bold;
+	letter-spacing: rem-calc(2px);
+	font-size: rem-calc(14pt);
+}
 h1{
 	font-weight: 300;
 	font-family: $alt-font-family;
@@ -60,10 +67,7 @@ h2{
 	color: $black;
 }
 h3{
-	text-transform: uppercase;
-	color: $secondary-color;
-	font-weight: bold;
-	letter-spacing: rem-calc(2px);
+	@extend .strong-heading;
 	margin-bottom: rem-calc(2px);
 }
 p{
@@ -88,12 +92,12 @@ address{font-style: normal}
 .alt-font{font-family: $alt-font-family;}
 .alt-color{color: $secondary-color;}
 .black-color{color:$black;}
-.gray-color{color:$medium-gray;}
+.gray-color{color:$dark-gray;}
 .upper{text-transform: uppercase;}
 .caps{text-transform: capitalize;}
 .underline{text-decoration: underline;}
 .bigger{font-size: rem-calc(23px);}
-.gray-bg{background-color: $medium-gray;}
+.gray-bg{background-color: $dark-gray;}
 .light-gray-bg{background-color: $light-gray}
 .light-gray-bg hr{border-color: $white}
 .white-bg{background-color: $white}
@@ -133,9 +137,11 @@ address{font-style: normal}
 .button.hollow.secondary{
 	border-width:2px;
 }
+a.button:hover{
+	text-decoration: none;
+}
 .strong-title, button.white.strong-title{
 	@extend h3;
-	font-size: rem-calc(14pt);
 	&.margin-top {
 		margin-top:0.7rem;
 	}
@@ -285,7 +291,7 @@ address{font-style: normal}
 			padding: 40px 0;
 		}
 		a{
-			border-bottom: 3px solid $medium-gray;
+			border-bottom: 3px solid $dark-gray;
 			display: inline;
 			padding: 0;
 		}
@@ -310,9 +316,18 @@ address{font-style: normal}
 #pageContent{
 	min-height:80px;
 }
+.header-height{
+	height: 700px;
+	@include breakpoint(medium){
+		height: 900px;
+	}
+	@include breakpoint(large){
+		height:auto;
+	}
+}
 .clear-header{
 	@include breakpoint(medium){
-		padding-top:80px;
+		margin-top:80px;
 	}
 }
 /* footer */
@@ -392,7 +407,7 @@ address{font-style: normal}
 
 /* index */
 .heading-text h1{
-	color: $medium-gray;
+	color: $dark-gray;
 	line-height: 1.25;
 }
 .heading-image{
@@ -403,6 +418,38 @@ address{font-style: normal}
 	font-size: rem-calc(18px);
 	border: 1px solid $light-gray;
 	border-width: 1px 0 0;
+	padding: 46px 0 40px 0;
+}
+.main-buttons{
+	@extend .strong-heading;
+	font-size: rem-calc(13px);
+	width: 174px;
+	margin: 56px 0;
+	@include breakpoint(large){
+		margin: 40px 0;
+	}
+}
+#newsList{
+	padding-top:60px;
+	img{
+		width:100%
+	}
+	hr{
+		margin-bottom: 0;
+	}
+}
+.news-tile{
+	border-bottom: 3px solid #acacac;
+	.desc{
+		margin:30px;
+	}
+	p{
+		font-size: rem-calc(22px);
+	}
+}
+.more-posts-button{
+		display: inline-block;
+		margin: 60px 0;
 }
 
 /* work module */
@@ -425,6 +472,11 @@ address{font-style: normal}
 		border: 1px solid $light-gray;
 		border-width: 0 1px 0 0;
 		padding: 30px 0;
+		@extend .strong-heading;
+		margin:0;
+		&:hover{
+			color: $dark-gray;
+		}
 		@include breakpoint(small only){
 			border-width:0 0 1px 0;
 			text-align:left;
@@ -439,6 +491,7 @@ address{font-style: normal}
 			}
 			&.open{
 				background-color: $light-gray;
+				color: $dark-gray;
 				.show-open{
 					display:inline;
 				}
@@ -449,15 +502,44 @@ address{font-style: normal}
 		}
 	}
 }
-#newsList{
-	img{
-		width:100%
+.imageTiles{
+	cursor:pointer;
+	.columns{
+		position: relative;
+		.desc{
+			position: absolute;
+			top:0;
+			text-align: center;
+			padding: 30px;
+			opacity:0;
+			-webkit-transition: opacity 0.25s ease-out; /* For Safari 3.1 to 6.0 */
+			transition: opacity 0.25s ease-out;
+			h1{
+				font-size: rem-calc(32px);
+				a:hover{
+					text-decoration: none;
+					color: $dark-gray;
+				}
+			}
+			h3{
+				font-size: rem-calc(13px);
+			}
+		}
+		img{
+			-webkit-transition: opacity 0.25s ease-out; /* For Safari 3.1 to 6.0 */
+			transition: opacity 0.25s ease-out;
+		}
+		&:hover{
+			img{
+				opacity:0;
+			}
+			.desc{
+				opacity:100;
+			}
+		}
 	}
 }
-.news-tile{
-	border: 1px solid $white;
-}
-/* work module */
+
 
 
 /* work */

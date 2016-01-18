@@ -58,12 +58,22 @@ function scrollToElement($element, offset){
 		1000);
 }
 
+function verticalCenter($element, $container){
+	$elementHeight = $element.outerHeight();
+	$containerHeight = $container.height();
+	$elementMargin = $containerHeight/2 - $elementHeight/2;
+	$element.css('margin-top',$elementMargin);
+}
 
 
 
-
-
+// verticalCenter($(this).find('.desc'), $(this))
 $(document).ready(function(){
+	$verticalCenterElements = $('.vertical-center');
+	$verticalCenterElements.each(function(){
+		$parent = $(this).closest($('.vertical-center-container'));
+		verticalCenter($(this),$parent);
+	});
 });
 
 

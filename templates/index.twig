@@ -2,11 +2,13 @@
 {% block title %}{% endblock %}
 {% block content %}
 <div id="indexPage">
-	<img class="heading-image show-for-large" src="img/aub1-crop.jpg" alt="">
-	<div class="hMargin">
-		<div class="row">
-			<div class="columns small-12 large-6 end clear-header">
-				<h1>Welcome to <span class="alt-color">Bond&Coyne</span>, an award winning branding agency delivering impactful and innovative solutions.</h1>
+	<div class="vertical-center-container header-height">
+		<img class="heading-image show-for-large" src="img/aub1-crop.jpg" alt="">
+		<div class="hMargin">
+			<div class="row">
+				<div class="columns vertical-center small-12 large-6 end heading-text">
+					<h1>Welcome to <span class="alt-color">Bond&Coyne</span>, an award winning branding agency delivering impactful and innovative solutions.</h1>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -18,19 +20,19 @@
 			</button>
 		</div>
 	</div>
-	{% include '_work_module.twig' %}
+	{% include '_work_module.twig' with {'number_of_tiles_small': 4, 'number_of_tiles_medium':8, 'number_of_tiles_large':9 } %}
 	<div class="row">
 		<div class="columns small-12 text-center">
-			<a href="workmenu" class="button hollow secondary" type=button>View All Work</a>
+			<a href="workmenu" class="view-all-work-button button hollow secondary main-buttons" type='button'>View All Work</a>
 		</div>
 	</div>
-	<div class="light-gray-bg">
+	<section class="light-gray-bg">
 		<div id="newsList" class="hMargin">
-			<div class="row">
+			<heading class="row">
 				<div class="columns small-12">
-					<h1>Latest <span class="show-for-large">News</span></h1>
+					<h1 class="gray-color">Latest <span class="show-for-large">News</span></h1>
 				</div>
-			</div>
+			</heading>
 			<div class="row column"><hr></div>
 			<div class="row">
 				{% set newsImages = [
@@ -39,23 +41,27 @@
 					{'img':'img/news-thumb/three.jpg', 'heading':'Our recent weekend in Berlin'}
 				] %}
 				{% for image in newsImages %}
-				<div class="columns small-12 medium-6 large-4 {% if loop.last %} show-for-large {% endif %}">
+				<article class="columns small-12 medium-6 large-4 {% if loop.last %} show-for-large {% endif %}">
 					<div class="news-tile white-bg">
-						<img src="{{ image.img }}" alt="">
-						<p class="alt-font">{{image.heading}}</p>
-						<a class="underline-link" href="#">Read More</a>
+						<a href="#">
+							<img src="{{ image.img }}" alt="">
+						</a>
+						<div class="desc">
+							<p class="alt-font">{{image.heading}}</p>
+							<a class="underline-link font-light" href="#">Read More</a>
+						</div>
 					</div>
-				</div>
+				</article>
 				{% endfor %}
 			</div>
 			<div class="row column"><hr></div>
 			<div class="row">
 				<div class="columns small-12 text-center">
-					<a href="#" class="button hollow secondary show-for-large" type=button>Read more</a>
-					<a href="#" class="underline-link hide-for-large" type=button>More posts</a>
+					<a href="#" class="button hollow secondary show-for-large main-buttons" type=button>Read more</a>
+					<a href="#" class="underline-link hide-for-large more-posts-button font-light" type=button>More posts</a>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </div>
 {% endblock %}

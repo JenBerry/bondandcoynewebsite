@@ -53,8 +53,8 @@ $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
 $light-gray: #eeeeee;
-$medium-gray: #404041;
-$dark-gray: #8a8a8a;
+$medium-gray: #525253;
+$dark-gray: #404041;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
@@ -229,7 +229,7 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 0.85em 1em;
+$button-padding: 1.2em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
