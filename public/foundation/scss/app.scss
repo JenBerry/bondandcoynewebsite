@@ -443,8 +443,10 @@ img.full-width{
 	}
 	.social-sticky-container{
 		// height:0!important;
-		width:80px;
-		float:right;
+		@include breakpoint(medium){
+			width:80px;
+			float:right;
+		}
 	}
 	@include breakpoint(small only){
 		top:80px;
