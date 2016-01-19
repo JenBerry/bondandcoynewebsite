@@ -247,6 +247,9 @@ a.button:hover{
 		}
 	}
 }
+img.full-width{
+	width:100%;
+}
 /* header */
 #pageHeader{
 	font-size: rem-calc(20px);
@@ -268,8 +271,7 @@ a.button:hover{
 		width:100%;
 	}
 	#topButton{
-		display: none;
-		width:160px;
+		width:80px;
 		position: absolute;
 		top:0;
 		right:0;
@@ -280,16 +282,13 @@ a.button:hover{
 			text-align: center;
 		}
 	}
-	.is-stuck #topButton{
-		display:block;
-	}
 }
 /* menu */
 #mainMenuPane{
 	display:none;
 	.background{
 		position:absolute;
-		top:0;
+		top:80;
 		width:100%;
 		z-index: -1;
 	}
@@ -298,7 +297,7 @@ a.button:hover{
 			position: absolute;
 			width:50%;
 			z-index:2;
-			top:0;
+			top:80px;
 			right:0;
 		}
 	}
@@ -366,9 +365,9 @@ a.button:hover{
 		width:100%;
 	}
 	@include breakpoint(medium down){
-		min-height:400px!important;
+		min-height:350px!important;
 		iframe{
-			min-height:400px!important;
+			min-height:350px!important;
 		}
 	}
 }
@@ -469,12 +468,14 @@ a.button:hover{
 }
 .button.view-work{
 	font-size: rem-calc(18px);
-	border-width: 1px 0 0;
+	border-width: 0 0 1px;
 	border-style: solid;
-	border-color: white;
+	border-color: $light-gray;
 	padding: 46px 0 40px 0;
+	margin-top:1px;
 	@include breakpoint(large){
-		border-color: $light-gray;
+		border-width: 1px 0;
+		margin-top:0;
 	}
 	img{
 		-webkit-transition: top 0.5s ease-out; /* For Safari 3.1 to 6.0 */
@@ -552,7 +553,7 @@ a.button:hover{
 	}
 	.sticky-nav{
 		width:100%;
-		border-top: 1px solid $light-gray;
+		// border-top: 1px solid $light-gray;
 		background-color: $white;
 	}
 	.button{
@@ -591,6 +592,7 @@ a.button:hover{
 }
 .imageTiles{
 	cursor:pointer;
+	border-top: 1px solid $light-gray;
 	.columns{
 		position: relative;
 		.desc{

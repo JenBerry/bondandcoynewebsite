@@ -15,13 +15,16 @@ function showToggle($container,$button){
 }
 
 function showMenu(){
-	$screenHeight = $(window).height();
-	$('.screenHeight').css('min-height',$screenHeight);
-	$('.halfScreenHeight').css('min-height',($screenHeight-80)/2);
 
 	$("#mainMenuButton").html('<img src="img/icons/cross.png" alt=""><br><span>Close</span>');
 	$("#mainMenuPane").show();
 	$('#hideOnMenu').hide();
+	
+	$screenHeight = $(window).height();
+	$menuHeight = $("#mainMenuContent").height();
+	$biggerHeight= Math.max($screenHeight-80,$menuHeight);
+	$('.screenHeight').css('min-height',$biggerHeight);
+	$('.halfScreenHeight').css('min-height',($screenHeight-80)/2);
 
 	$element = $('#mainMenuColumn ul');
 	$containerHeight = $screenHeight - 80;
@@ -81,7 +84,6 @@ function setVerticalCenterDelay(){
 function setIndexPageToScreenHeight(){
 	$windowHeight = $(window).height();
 	$headerHeight = $windowHeight-80-124;
-	console.log("window: " + $windowHeight + ", header: " + $headerHeight);
 	$('#indexPageScreenHeight .header-height').css("max-height",$headerHeight + "px");
 }
 
@@ -96,6 +98,7 @@ $(window).on("load", function() {
 });
 
 $( window ).resize(function(){
+	hideMenu();
 	setIndexPageToScreenHeight();
 	setVerticalCenter();
 	setVerticalCenterDelay();
