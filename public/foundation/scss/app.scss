@@ -436,7 +436,15 @@ img.full-width{
 		}
 	}
 	.social-sticky-div{
-		width:100%;
+		@include breakpoint(medium){
+			left:auto!important;
+			right:0;
+		}
+	}
+	.social-sticky-container{
+		// height:0!important;
+		width:80px;
+		float:right;
 	}
 	@include breakpoint(small only){
 		top:80px;
