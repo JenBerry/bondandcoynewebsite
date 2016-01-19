@@ -113,18 +113,20 @@
 				<h1 class="vMargin">Related Work</h1>
 			</header>
 		</div>
-		<div class="expanded row collapse">
+		<div class="expanded row collapse imageTiles" data-equalizer data-equalize-on="medium">
 			{% set relatedImages = [
 				'img/aub1.jpg',
 				'img/aecc-email.jpg',
 				'img/ellie.jpg'
 			] %}
 			{% for image in relatedImages %}
-				<div class="small-12 medium-4 columns">
-					<a href="">
-						<img src="{{ image }}" alt="">
-					</a>
-				</div>
+				<article class="small-12 medium-4 columns vertical-center-container" onClick="window.location.href = '/work';" data-equalizer-watch>
+					<img src="{{ image }}" alt="">
+					<div class="desc vertical-center-delay">
+						<h3>Arts University Bournemouth</h3>
+						<h1><a href="/work" onClick="event.preventDefault();">Brand Strategy and an Award Winning Prospectus</a></h1>
+					</div>
+				</article>
 			{% endfor %}
 		</div>
 	</section>
