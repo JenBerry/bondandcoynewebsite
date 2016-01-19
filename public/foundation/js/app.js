@@ -72,37 +72,16 @@ function setVerticalCenter(){
 	});
 }
 
-function matchHeight($elementList){
-	$height = 0;
-	$elementList.each(function(){
-		$contentHeight = $(this).find('.match-height-content').height();
-		if ($contentHeight > $height){
-			$height = $contentHeight;
-		}
-	});
-	$elementList.height($height);
-}
-function setMatchHeight(){
-	console.log('set match height');
-	$matchHeightContainers = $('.match-height-container');
-	$matchHeightContainers.each(function(){
-		$elementList = $(this).find('.match-height');
-		matchHeight($elementList);
-	});
-	
-}
 
 $(document).ready(function(){
 });
 
 $(window).on("load", function() {
 	setVerticalCenter();
-	setMatchHeight();
 });
 
 $( window ).resize(function(){
 	setVerticalCenter();
-	setMatchHeight();
 });
 
 

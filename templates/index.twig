@@ -38,7 +38,7 @@
 				</div>
 			</heading>
 			<div class="row column"><hr></div>
-			<div class="row match-height-container">
+			<div class="row" data-equalizer data-equalizer-on='medium'>
 				{% set newsImages = [
 					{'img':'img/news-thumb/one.jpg', 'heading':'Award Winning Education Campaign'},
 					{'img':'img/news-thumb/two.jpg', 'heading':'A pitch winning week for B&C'},
@@ -46,7 +46,7 @@
 				] %}
 				{% for image in newsImages %}
 				<article class="columns small-12 medium-6 large-4 {% if loop.last %} show-for-large {% endif %}">
-					<div class="news-tile white-bg match-height">
+					<div class="news-tile white-bg" data-equalizer-watch>
 						<div class="match-height-content">
 							<a href="#">
 								<img src="{{ image.img }}" alt="">
