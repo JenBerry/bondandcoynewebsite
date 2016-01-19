@@ -1,11 +1,20 @@
-<header id="pageHeader" class="row collapse expanded" data-sticky-container>
-	<div class="small-12 columns" data-sticky data-options="stickyOn:large; marginTop:0">
-		<button id="mainMenuButton" onClick="toggleMenu()" class="button float-left alt-color font-bold upper square icon-text">
-			<img src="img/icons/menu.png" alt=""><br>
-			<span>Menu</span>
-		</button>
-		{% block headerText %}
-		<div id='companyTitle' onClick="window.location.href = '/';" class="alt-color alt-font">Bond & Coyne</div>
-		{% endblock %}
+<header id="pageHeader" class="row collapse expanded">
+	<div class="small-12 columns">
+		<div class="" data-sticky-container>
+			<div data-sticky data-top-anchor="bodyContent:top" data-btm-anchor="1000000" data-margin-top="0" data-sticky-on="large">
+				<button id="mainMenuButton" onClick="toggleMenu()" class="button float-left alt-color font-bold upper square icon-text">
+					<img src="img/icons/menu.png" alt=""><br>
+					<span>Menu</span>
+				</button>
+				<div id='companyTitle' onClick="window.location.href = '/';" class="alt-color alt-font">
+					Bond & Coyne
+				</div>
+				<button id="topButton" onClick="backToTop();" class="button white square">
+					<div class="button-inner">
+						<img src="img/icons/up-chevron.png" alt=""><br>
+					</div>
+				</button>
+			</div>
+		</div>
 	</div>
 </header>

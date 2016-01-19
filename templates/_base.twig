@@ -10,16 +10,18 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100|Roboto:300,700,400' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="img/favicon.ico">
 </head>
-<body>
-	{% include '_header.twig' %}
-	{% include '_menu.twig' %}
-	<div id="hideOnMenu">
-		<div id="pageContent">
-			{% block content %}
-				Content goes here
-			{% endblock %}
+<body id="body">
+	<div id="bodyContent">
+		{% include '_header.twig' %}
+		{% include '_menu.twig' %}
+		<div id="hideOnMenu">
+			<div id="pageContent">
+				{% block content %}
+					Content goes here
+				{% endblock %}
+			</div>
+			{% include '_footer.twig' %}
 		</div>
-		{% include '_footer.twig' %}
 	</div>
 	
 	<script src="foundation/bower_components/jquery/dist/jquery.js"></script>

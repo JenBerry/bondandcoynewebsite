@@ -1,24 +1,27 @@
-<div class="social-snap-container" data-sticky-container>
-	<div id="socialButtons" class="sticky" data-sticky data-options="stickyOn:large; anchor:socialContainer;marginTop:0">
-		<button id="topButton" onClick="backToTop();" class="button white square">
-			<img src="img/icons/up-chevron.png" alt=""><br>
-		</button><!--
-		--><button onClick="$('#socialButtons .menu').slideToggle('slow');" id="socialMenuButton" class="button alt-color square">
-			<img src="img/icons/share.png" alt=""><br>
-		</button>
-		<ul class="menu text-right">
-			<li><button type="button" class="button white square">
-				<img src="img/icons/twitter.png" alt="">
-			</button></li>
-			<li><button type="button" class="button white square">
-				<img src="img/icons/linked-in.png" alt="">
-			</button></li>
-			<li><button type="button" class="button white square">
-				<img src="img/icons/facebook.png" alt="">
-			</button></li>
-			<li><button type="button" class="button white square">
-				<img src="img/icons/google-plus.png" alt="">
-			</button></li>
-		</ul>
+<div id="socialButtons">
+	<div data-sticky-container>
+		<div class="social-sticky-div" data-sticky data-top-anchor="socialContainer:top" data-btm-anchor="1000000" data-margin-top="0" data-sticky-on="large"  data-container-class="social-sticky-container">
+
+			<button onClick="$('#socialButtons .menu').slideToggle('slow');" id="socialMenuButton" class="button alt-color square">
+				<img src="img/icons/share.png" alt=""><br>
+			</button>
+			<ul class="menu">
+				<li><button type="button" class="button white square">
+					<img src="img/icons/twitter.png" alt="">
+				</button></li>
+				<li><button type="button" class="button white square">
+					<img src="img/icons/linked-in.png" alt="">
+				</button></li>
+				<li><button type="button" class="button white square">
+					<img src="img/icons/facebook.png" alt="">
+				</button></li>
+				<li><button type="button" class="button white square">
+					<img src="img/icons/google-plus.png" alt="">
+				</button></li>
+			</ul>
+			
+		</div>
 	</div>
+
+
 </div>

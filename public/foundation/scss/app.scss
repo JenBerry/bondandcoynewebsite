@@ -141,6 +141,15 @@ address{font-style: normal}
 a.button:hover{
 	text-decoration: none;
 }
+.main-buttons{
+	@extend .strong-heading;
+	font-size: rem-calc(13px);
+	width: 174px;
+	margin: 56px 0;
+	@include breakpoint(large){
+		margin: 40px 0;
+	}
+}
 .strong-title, button.white.strong-title{
 	@extend h3;
 	&.margin-top {
@@ -237,13 +246,32 @@ a.button:hover{
 		height:rem-calc(80px);
 		line-height:rem-calc(80px);
 		padding-left: rem-calc(114px);
-		background-color: $white;
 		border-bottom: 1px solid $light-gray;
 		cursor: pointer;
 		transition: background-color 0.25s ease-out, color 0.25s ease-out;
 		&:hover{
 			background-color: $light-gray;
 		}
+	}
+	.sticky{
+		background-color: $white;
+		width:100%;
+	}
+	#topButton{
+		display: none;
+		width:160px;
+		position: absolute;
+		top:0;
+		right:0;
+		border: 1px solid $light-gray;
+		text-align: left;
+		.button-inner{
+			width:80px;
+			text-align: center;
+		}
+	}
+	.is-stuck #topButton{
+		display:block;
 	}
 }
 /* menu */
@@ -335,9 +363,7 @@ a.button:hover{
 	}
 }
 /* content */
-#pageContent{
-	min-height:80px;
-}
+
 .header-height{
 	height: 700px;
 	@include breakpoint(medium){
@@ -375,56 +401,45 @@ a.button:hover{
 }
 
 /* social */
-.social-button-container{
-	width: 80px;
-	position: absolute;
-	right:0;
-}
-.social-snap-container{
-	height: auto!important;
-	position: static;
+#socialButtons{
+	position: relative;
+	width:100%;
+	top:0;
+	// right:0;
+	z-index: 5;
+	.white.button{
+		border: 1px solid $light-gray;
+	}
+	.menu{
+		display: none;
+		li{
+			@include breakpoint(medium){
+				display: block;
+			}
+		}
+	}
+	.social-sticky-div{
+		width:100%;
+	}
+	@include breakpoint(small only){
+		top:80px;
+		position: absolute;
+	}
 	@include breakpoint(medium){
-		z-index: 3;
+		text-align: right;
+	}
+}
+#socialContainer{
+	margin-top:rem-calc(60px);
+	@include breakpoint(medium){
 		position: relative;
 	}
-	#socialButtons{
-		top:0;
-		left:0;
-		@include breakpoint(medium down){
-			position: absolute;
-		}
-		@include breakpoint(medium){
-			left:auto!important;
-			right:0;
-			// position: static;
-		}
-		i{
-				font-size: 2rem;
-		}
-		#socialMenuButton{
-			margin-top:80px;
-			@include breakpoint(medium){
-				margin-top: 0;
-			}
-		}
-		.white.button{
-			border: 1px solid $light-gray;
-		}
-		.menu{
-			display: none;
-			li{
-				@include breakpoint(medium){
-					display: block;
-				}
-			}
-		}
-		#topButton{
-			display: none;
-		}
-		&.is-stuck #topButton{
-			display:inline;
-		}
-	}
+}
+#workPage{
+	margin-top: 0;
+}
+#workSection{
+	// margin-top: -80px;
 }
 
 /* index */
@@ -444,15 +459,6 @@ a.button:hover{
 	padding: 46px 0 40px 0;
 	@include breakpoint(large){
 		border: 1px solid $light-gray;
-	}
-}
-.main-buttons{
-	@extend .strong-heading;
-	font-size: rem-calc(13px);
-	width: 174px;
-	margin: 56px 0;
-	@include breakpoint(large){
-		margin: 40px 0;
 	}
 }
 #newsList{
