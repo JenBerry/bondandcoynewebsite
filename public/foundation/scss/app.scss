@@ -391,7 +391,13 @@ a.button:hover{
 		margin-bottom:18px;
 	}
 }
-.primaryFooterLogo{margin: 0 30px;}
+.primaryFooterLogo{
+	margin: 0 10px;
+	max-height: 60px;
+	@include breakpoint(medium){
+		margin: 0 30px;
+	}
+}
 .secondary-footer-logos{
 	max-height:45px;
 	margin-bottom:30px;
