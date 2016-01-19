@@ -85,6 +85,11 @@ cite{
 	}
 }
 address{font-style: normal}
+hr{
+	@include breakpoint(medium){
+		margin: rem-calc(56px) auto;
+	}
+}
 
 .font-bold{font-weight: 700;}
 .font-light{font-weight: 300;}
@@ -366,6 +371,7 @@ a.button:hover{
 
 .header-height{
 	height: 700px;
+	overflow: hidden;
 	@include breakpoint(medium){
 		height: 900px;
 	}
@@ -431,19 +437,15 @@ a.button:hover{
 	}
 }
 #socialContainer{
-	margin-top:rem-calc(60px);
+	margin-top:30px;
 	@include breakpoint(medium){
 		position: relative;
+		margin-top: 60px;
 	}
-}
-#workPage{
-	margin-top: 0;
-}
-#workSection{
-	// margin-top: -80px;
 }
 
 /* index */
+
 .heading-text{
 		h1{
 		color: $dark-gray;
@@ -458,8 +460,9 @@ a.button:hover{
 	font-size: rem-calc(18px);
 	border-width: 1px 0 0;
 	padding: 46px 0 40px 0;
+		border: 1px solid $white;
 	@include breakpoint(large){
-		border: 1px solid $light-gray;
+		border-color: $light-gray;
 	}
 }
 #newsList{
@@ -607,6 +610,7 @@ a.button:hover{
 
 /* work */
 #workPage{
+	margin-top: 0;
 	h1{
 		margin-top:0;
 	}

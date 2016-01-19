@@ -71,17 +71,34 @@ function setVerticalCenter(){
 		verticalCenter($(this),$parent);
 	});
 }
+function setVerticalCenterDelay(){
+	$verticalCenterElements = $('.vertical-center-delay');
+	$verticalCenterElements.each(function(){
+		$parent = $(this).closest($('.vertical-center-container'));
+		verticalCenter($(this),$parent);
+	});
+}
+function setIndexPageToScreenHeight(){
+	$windowHeight = $(window).height();
+	$headerHeight = $windowHeight-80-124;
+	console.log("window: " + $windowHeight + ", header: " + $headerHeight);
+	$('#indexPageScreenHeight .header-height').css("max-height",$headerHeight + "px");
+}
 
 
 $(document).ready(function(){
+	setIndexPageToScreenHeight();
+	setVerticalCenter();
 });
 
 $(window).on("load", function() {
-	setVerticalCenter();
+	setVerticalCenterDelay();
 });
 
 $( window ).resize(function(){
+	setIndexPageToScreenHeight();
 	setVerticalCenter();
+	setVerticalCenterDelay();
 });
 
 
