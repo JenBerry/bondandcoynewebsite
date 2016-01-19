@@ -695,9 +695,6 @@ img.full-width{
 				margin-right:30px;
 			}
 		}
-		p{
-			line-height: 1.4;
-		}
 	}
 }
 dl.awards{
@@ -713,8 +710,57 @@ dl.awards{
 }
 
 /* about */
+.big-header{
+	margin: 83px 0 107px;
+	@include breakpoint(medium){
+		margin: 52px 0 76px
+	}
+}
 .team-member-desc{
 	display: none;
+}
+#servicesSection{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	hr{
+		margin: rem-calc(23px) auto; 
+	}
+	h1{
+		margin: 40px 0 7px;
+		@include breakpoint(medium){
+			margin-top: 27px;
+		}
+		@include breakpoint(large){
+			margin-top: 48px;
+		}
+	}
+	.service-content-block{
+		margin-top: 40px;
+		margin-bottom:40px;
+	}
+}
+#teamSection{
+	h1{
+		margin: 60px 0;
+		@include breakpoint(medium only){
+			margin-top:3px;
+		}
+	}
+}
+#teamTiles img{
+	width: 100%;
+}
+#partnerSection{
+	margin-bottom: 60px;
+	@include breakpoint(medium){
+		margin-bottom: 110px;
+	}
+	h1{
+		margin: 60px 0;
+		@include breakpoint(large){
+			margin-top:110px;
+		}
+	}
 }
 
 
