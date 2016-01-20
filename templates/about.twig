@@ -25,7 +25,7 @@
 			<h3>Definition and Creation</h3>
 			<p>We work to define our clients' brand today and what their brand will be tomorrow. By defining what makes them unique, we enable them to confidently and powerfully enter their market. Through strategic processes, we deliver strong brand positioning that defines how a brand can create real distinction within its sector, extending its reputation, reach and influence.</p>
 			<hr>
-			<div class="row">
+			<div class="row strong-footer">
 				<div class="columns small-12 medium-6">
 					<strong>
 						Brand proposition development<br>
@@ -57,7 +57,7 @@
 				We create digital and physical interactions that help our clients to engage with their audiences in new and exciting ways. We harness the opportunities made possible by new technologies and materials to build interactions that reinforce a brand and provide opportunities to start conversations with target audiences. From the phone screen through to stands at exhibitions, we build interactions that carry our clients’ distinctive signatures.
 			</p>
 			<hr>
-			<div class="row">
+			<div class="row strong-footer">
 				<div class="columns small-12 medium-6">
 					<strong>
 						Website design and build<br>
@@ -81,7 +81,7 @@
 			<h3>Communication and Awareness</h3>
 			<p>We specialise in telling complex stories simply. Working closely with clients and stakeholders, we distill important messages and write, edit and design communications that make those messages digestible. We are expert at designing communications across all print and digital media formats and work efficiently to produce on-budget, on-time and on-brand collateral for our clients. </p>
 			<hr>
-			<div class="row">
+			<div class="row strong-footer">
 				<div class="columns small-12 medium-6">
 					<strong>
 						Animations<br>
@@ -170,22 +170,25 @@
 	<div class="row column">
 		<h1>...and we were recognised in the process.</h1>
 	</div>
-	<div class="row expanded collapse small-up-2 medium-up-3 large-up-4 text-center">
-		{% set awardImages = [
-			{'img':'img/award/one.jpg','year':'2015','award':"Chair's Grand Prix Award"},
-			{'img':'img/award/one.jpg','year':'2015','award':"Winner Innovation - SME"},
-			{'img':'img/award/two.jpg','year':'2014','award':"Winner Corporate Brochure"},
-			{'img':'img/award/three.jpg','year':'2014','award':"Best Education Campaign"},
-			{'img':'img/award/four.jpg','year':'2014','award':"Gold for Best Innovation and Creative"},
-			{'img':'img/award/four.jpg','year':'2014','award':"Gold for Best Specialist Prospectus"},
-		] %}
-		{% for image in awardImages %}
-		<div class="columns">
-			<img src="{{image.img}}" alt="">
-			<h3>{{image.year}}</h3>
-			<strong>{{image.award}}</strong>
+	{% set awardImages = [
+		{'img':'img/award/one.jpg','year':'2015','award':"Chair's Grand Prix Award"},
+		{'img':'img/award/one.jpg','year':'2015','award':"Winner Innovation - SME"},
+		{'img':'img/award/two.jpg','year':'2014','award':"Winner Corporate Brochure"},
+		{'img':'img/award/three.jpg','year':'2014','award':"Best Education Campaign"},
+		{'img':'img/award/four.jpg','year':'2014','award':"Gold for Best Innovation and Creative"},
+		{'img':'img/award/four.jpg','year':'2014','award':"Gold for Best Specialist Prospectus"},
+		
+	] %}
+	<div class="small-last{{awardImages|length % 2}} medium-last{{awardImages|length % 3}} large-last{{awardImages|length % 4}}">
+		<div class="row expanded collapse small-up-2 medium-up-3 large-up-4 text-center">
+			{% for image in awardImages %}
+			<div class="columns award-columns">
+				<img src="{{image.img}}" alt="">
+				<h3>{{image.year}}</h3>
+				<strong>{{image.award}}</strong>
+			</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
 </section>
 {% endblock %}
