@@ -895,5 +895,15 @@ dl.awards{
 		}
 	}
 }
-
+#blogPostPage{
+	margin-bottom: 60px;
+	article > .row{
+		margin-bottom:30px;
+	}
+	blockquote{
+		p, .strong-title{
+			color: $dark-gray;
+		}
+	}
+}
 

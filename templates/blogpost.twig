@@ -1,24 +1,30 @@
 {% extends "_base.twig" %}
 {% block title %}Journal - {% endblock %}
 {% block content %}
+
+{% block blogMainImage %}
 <div class="expanded row collapse">
 	<img class="small-12 columns" src="img/aub1.jpg" alt="Main image">
 </div>
+{% endblock %}
 <div id="socialContainer">
 	{% include '_social.twig' %}
-	<section>
+	<section id="blogPostPage">
 		<article class="main-article hMargin read-more-container">
 			<div class="row">
 				<div class="small-12 medium-6 columns">
 					<heading>
-						<h1>Award Winning Education Campeign</h1>
-						<h2>Building a brand strategy by breaking the rules of what a prospectus should be</h2>
-						<p class="strong-title">Arts University Bournemouth</p>
+						{% block blogHeading %}
+							<h1>Award Winning Education Campeign</h1>
+							<h2>Building a brand strategy by breaking the rules of what a prospectus should be</h2>
+							<p class="strong-title">Arts University Bournemouth</p>
+						{% endblock %}
 					</heading>
 					<hr class="show-for-large">
 				</div>
 				<div class="small-12 medium-11 large-6 columns large-float-right">
 					<hr class="hide-for-large">
+					{% block blogContent %}
 					<p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>
 					<p >Unlike the interactive nature of online, the printed prospectus struggled to truly reflect the creative and collaborative environment of AUB. The breadth of content it covered and its physicality made it both costly to print and post to enquirers.</p>
 					<h3>Heading</h3>
@@ -32,9 +38,11 @@
 					</blockquote>
 					<h3>Heading</h3>
 					<p>In its its first three years, the House of Cards prospectus helped to deliver a 27% rise in applications to AUB. It gained press coverage at local and national level, and has won at European Excellence Awards, HEIST, and the Brand Impact Awards.As well as reducing costs for print and postage, the House of Cards has been adopted as an engagement tool across the university's Widening Participation and International departments. By encouraging prospective students to share what they build, it has become a mainstay of social media surrounding AUB.</p>
+					{% endblock %}
 					<hr class="hide-for-large">
 				</div>
 			</div>
+			{% block blogExtraContent %}
 			<div class="row column">
 				<img src="img/prospectus.jpg" alt="">
 			</div>
@@ -55,6 +63,7 @@
 					<p>Playing to the strength of print — its physicality — we designed a set of interlocking cards with headline information, student work, photography and links to course pages on AUB's website. The interlocking cards could be built into structures that became mini versions of AUB's campus, where courses mix together in one creative space.</p>
 				</div>
 			</div>
+			{% endblock %}
 		</article>
 		<footer class="hMargin">
 			<div class="row columns">
