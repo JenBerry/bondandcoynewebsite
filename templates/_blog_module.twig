@@ -10,21 +10,21 @@
 			{% endif %}
 			<div class="row" data-equalizer data-equalizer-on='medium'>
 				{% set newsImages = [
-					{'img':'img/news-thumb/one.jpg', 'heading':'Award Winning Education Campaign'},
-					{'img':'img/news-thumb/two.jpg', 'heading':'A pitch winning week for B&C'},
-					{'img':'img/news-thumb/three.jpg', 'heading':'Our recent weekend in Berlin'}
+					{'img':'/img/news-thumb/one.jpg', 'heading':'Award Winning Education Campaign'},
+					{'img':'/img/news-thumb/two.jpg', 'heading':'A pitch winning week for B&C'},
+					{'img':'/img/news-thumb/three.jpg', 'heading':'Our recent weekend in Berlin'}
 				] %}
 				{% for image in newsImages %}
 				<article class="columns small-12 medium-6 large-4 {% if loop.last %} show-for-large {% endif %}">
 					<div class="news-tile white-bg" data-equalizer-watch>
 						<div class="match-height-content">
-							<a href="#">
+							<a href="/blogposts/example">
 								<img src="{{ image.img }}" alt="">
 							</a>
 							<div class="desc">
 								<p class="alt-font">{{image.heading}}</p>
-								<a class="read-more-spacer underline-link font-light" href="/blog">Read More</a>
-								<a class="read-more underline-link font-light" href="/blog">Read More</a>
+								<a class="read-more-spacer underline-link font-light" href="/blogposts/example">Read More</a>
+								<a class="read-more underline-link font-light" href="/blogposts/example">Read More</a>
 							</div>
 						</div>
 					</div>

@@ -1,0 +1,49 @@
+{% extends "_base.twig" %}
+{% block title %}Journal - {% endblock %}
+{% block content %}
+
+<div class="expanded row collapse">
+{% block blogMainImage %}
+	<img class="small-12 columns" src="/img/aub1.jpg" alt="Main image">
+{% endblock %}
+</div>
+<div id="socialContainer">
+	{% include '_social.twig' %}
+	<section id="blogPostPage">
+		<article class="main-article hMargin read-more-container">
+			<div class="row">
+				<div class="small-12 medium-6 columns">
+					<heading>
+						{% block blogHeading %}
+							<h1>Heading</h1>
+							<h2>Heading</h2>
+							<p class="strong-title">Foo Bar</p>
+						{% endblock %}
+					</heading>
+					<hr class="show-for-large">
+				</div>
+				<div class="small-12 medium-11 large-6 columns large-float-right">
+					<hr class="hide-for-large">
+					{% block blogContent %}
+
+					{% endblock %}
+					<hr class="hide-for-large">
+				</div>
+			</div>
+			{% block blogExtraContent %}
+
+			{% endblock %}
+		</article>
+		<footer class="hMargin">
+			<div class="row columns">
+				<hr>
+			</div>
+			<div class="row">
+				<div class="columns small-6"><a href="#" class="button white strong-title"><img class="left" src="/img/icons/left-chevron.png" alt=""> Previous Posts</a></div>
+				<div class="columns small-6 text-right"><a href="#" class="button white strong-title">New Posts <img class="right" src="/img/icons/right-chevron.png" alt=""></a></div>
+			</div>
+		</footer>
+	</section>
+{% include "_blog_module.twig" with {'hideHeader': true, 'buttonText': 'All Posts'} %}
+</div>
+{% endblock %}

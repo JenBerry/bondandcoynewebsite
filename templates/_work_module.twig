@@ -50,11 +50,11 @@
 			"img/tiles/ellie.jpg",
 		]%}
 		{% for image in images|slice(0,number_of_tiles_large) %}
-			<article class="columns vertical-center-container {% if number_of_tiles_medium and loop.index > number_of_tiles_medium %}show-for-large{% elseif number_of_tiles_small and loop.index > number_of_tiles_small %}show-for-medium{% endif %}" onClick="window.location.href = '/work';">
+			<article class="columns vertical-center-container {% if number_of_tiles_medium and loop.index > number_of_tiles_medium %}show-for-large{% elseif number_of_tiles_small and loop.index > number_of_tiles_small %}show-for-medium{% endif %}" onClick="window.location.href = '/work/example';">
 				<img src="{{image}}" alt="" onClick="">
 				<div class="desc vertical-center-delay">
 					<h3>Arts University Bournemouth</h3>
-					<h1><a href="/work" onClick="event.preventDefault();">Brand Strategy and an Award Winning Prospectus</a></h1>
+					<h1><a href="/work/example" onClick="event.preventDefault();">Brand Strategy and an Award Winning Prospectus</a></h1>
 				</div>
 			</article>
 		{% endfor %}
