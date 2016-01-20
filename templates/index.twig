@@ -30,44 +30,5 @@
 			<a href="workmenu" class="view-all-work-button button hollow secondary main-buttons" type='button'>View All Work</a>
 		</div>
 	</div>
-	<section class="light-gray-bg">
-		<div id="newsList" class="hMargin">
-			<heading class="row">
-				<div class="columns small-12">
-					<h1 class="gray-color">Latest <span class="show-for-large">News</span></h1>
-				</div>
-			</heading>
-			<div class="row column"><hr></div>
-			<div class="row" data-equalizer data-equalizer-on='medium'>
-				{% set newsImages = [
-					{'img':'img/news-thumb/one.jpg', 'heading':'Award Winning Education Campaign'},
-					{'img':'img/news-thumb/two.jpg', 'heading':'A pitch winning week for B&C'},
-					{'img':'img/news-thumb/three.jpg', 'heading':'Our recent weekend in Berlin'}
-				] %}
-				{% for image in newsImages %}
-				<article class="columns small-12 medium-6 large-4 {% if loop.last %} show-for-large {% endif %}">
-					<div class="news-tile white-bg" data-equalizer-watch>
-						<div class="match-height-content">
-							<a href="#">
-								<img src="{{ image.img }}" alt="">
-							</a>
-							<div class="desc">
-								<p class="alt-font">{{image.heading}}</p>
-								<a class="read-more-spacer underline-link font-light" href="/blog">Read More</a>
-								<a class="read-more underline-link font-light" href="/blog">Read More</a>
-							</div>
-						</div>
-					</div>
-				</article>
-				{% endfor %}
-			</div>
-			<div class="row column"><hr class="no-bottom-margin"></div>
-			<div class="row">
-				<div class="columns small-12 text-center">
-					<a href="/blogmenu" class="button hollow secondary main-buttons" type=button>Read more</a>
-				</div>
-			</div>
-		</div>
-	</section>
-</div>
+	{% include "_blog_module.twig" with {'hideHeader': false, 'buttonText': 'Read More'} %}
 {% endblock %}
