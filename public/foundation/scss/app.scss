@@ -791,42 +791,55 @@ dl.awards{
 		right:0;
 	}
 }
+.center-grid{
+	// not comprehensive yet
+	// build up styles as I need them
+	@include breakpoint(medium only){
+		.medium-up-3.expanded.collapse{
+			&.medium-last1 .center-grid-columns{
+				&:last-child{
+					margin-left:33.3%;
+				}
+			}
+			&.medium-last2 .center-grid-columns{
+				&:nth-last-child(2){
+					margin-left:16.6%;
+				}
+			}
+		}
+	}
+	@include breakpoint(large){
+		.large-up-4.expanded.collapse{
+			&.large-last1 .center-grid-columns{
+				&:last-child{
+					margin-left:37.5%;
+				}
+			}
+			&.large-last2 .center-grid-columns{
+				&:nth-last-child(2){
+					margin-left:25%;
+				}
+			}
+			&.large-last3 .center-grid-columns{
+				&:nth-last-child(3){
+					margin-left:12.5%;
+				}
+			}
+		}
+	}
+}
 #partnerSection{
 	@include breakpoint(medium){
 		margin-bottom: 60px;
 	}
 	.award-columns{
 		margin-bottom: 50px;
-
 	}
-	@include breakpoint(medium only){
-		.medium-last1 .award-columns{
-			&:last-child{
-				margin-left:33.3%;
-			}
-		}
-		.medium-last2 .award-columns{
-			&:nth-last-child(2){
-				margin-left:16.6%;
-			}
-		}
+	.client-columns{
+		margin-bottom: 30px;
 	}
-	@include breakpoint(large){
-		.large-last1 .award-columns{
-			&:last-child{
-				margin-left:37.5%;
-			}
-		}
-		.large-last2 .award-columns{
-			&:nth-last-child(2){
-				margin-left:25%;
-			}
-		}
-		.large-last3 .award-columns{
-			&:nth-last-child(3){
-				margin-left:12.5%;
-			}
-		}
+	.client-row{
+		margin-bottom: -30px;
 	}
 	h1{
 		margin: 60px 0;

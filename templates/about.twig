@@ -164,8 +164,27 @@
 	<div class="row column">
 		<h1>We have worked with some great people...</h1>
 	</div>
-	<div class="row column">
-		<img src="img/partners.jpg" alt="">
+	{% set clentImages = [
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+		'img/clients/google.jpg',
+	] %}
+	<div class="center-grid">
+		<div class="client-row row expanded collapse small-up-2 medium-up-3 large-up-4 text-center small-last{{clentImages|length % 2}} medium-last{{clentImages|length % 3}} large-last{{clentImages|length % 4}}">
+			{% for image in clentImages %}
+			<div class="columns client-columns center-grid-columns">
+				<img src="{{image}}" alt="">
+			</div>
+			{% endfor %}
+		</div>
 	</div>
 	<div class="row column">
 		<h1>...and we were recognised in the process.</h1>
@@ -177,12 +196,12 @@
 		{'img':'img/award/three.jpg','year':'2014','award':"Best Education Campaign"},
 		{'img':'img/award/four.jpg','year':'2014','award':"Gold for Best Innovation and Creative"},
 		{'img':'img/award/four.jpg','year':'2014','award':"Gold for Best Specialist Prospectus"},
-		
+
 	] %}
-	<div class="small-last{{awardImages|length % 2}} medium-last{{awardImages|length % 3}} large-last{{awardImages|length % 4}}">
-		<div class="row expanded collapse small-up-2 medium-up-3 large-up-4 text-center">
+	<div class="center-grid">
+		<div class="row expanded collapse small-up-2 medium-up-3 large-up-4 text-center small-last{{awardImages|length % 2}} medium-last{{awardImages|length % 3}} large-last{{awardImages|length % 4}}">
 			{% for image in awardImages %}
-			<div class="columns award-columns">
+			<div class="columns award-columns center-grid-columns">
 				<img src="{{image.img}}" alt="">
 				<h3>{{image.year}}</h3>
 				<strong>{{image.award}}</strong>
