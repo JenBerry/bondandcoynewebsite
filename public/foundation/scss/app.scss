@@ -168,6 +168,9 @@ a.button:hover{
 		margin-top:0.7rem;
 	}
 }
+.full-width-images img{
+	width:100%;
+}
 
 
 
@@ -658,6 +661,30 @@ img.full-width{
 	@include breakpoint(large){
 		margin-bottom: 30px;
 	}
+	.extraInfo{
+		blockquote{
+			p{
+				@extend .alt-font;
+				@extend .bigger;
+				margin: 0;
+			}
+			cite{
+				@extend .strong-title;
+				margin-top:0.7rem;
+			}
+		}
+		dl{
+			dt{
+				font-family: $alt-font-family;
+				font-weight: 300;
+				font-size: rem-calc(22px);
+				margin-top: 0.8rem;
+			}
+			dd{
+				@extend .strong-title;
+			}
+		}
+	}
 }
 .main-article{
 	h1{
@@ -708,17 +735,6 @@ img.full-width{
 				margin-right:30px;
 			}
 		}
-	}
-}
-dl.awards{
-	dt{
-		font-family: $alt-font-family;
-		font-weight: 300;
-		font-size: rem-calc(22px);
-		margin-top: 0.8rem;
-	}
-	dd{
-		@extend .strong-title;
 	}
 }
 
@@ -903,6 +919,15 @@ dl.awards{
 	blockquote{
 		p, .strong-title{
 			color: $dark-gray;
+		}
+		p{
+			@extend .alt-font;
+			@extend .bigger;
+			margin: 0;
+		}
+		cite{
+			@extend .strong-title;
+			margin-top:0.7rem;
 		}
 	}
 }
