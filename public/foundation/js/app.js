@@ -87,6 +87,53 @@ function setIndexPageToScreenHeight(){
 	$('#indexPageScreenHeight .header-height').css("max-height",$headerHeight + "px");
 }
 
+function closeTeam($team){
+	$teamDescContainer = $('#teamDescContainer');
+	$teamContentsHeight = $team.find($('img')).height();
+	$team.height($teamContentsHeight);
+	$teamDescContainer.css({
+		'opacity': '0',
+	});
+	$team.removeClass('open');
+	// $team.height('auto');
+}
+function teamCloseAll(){
+	$openTeam = $('#teamTiles').find('.open');
+	if ($openTeam){
+		closeTeam($openTeam);
+	}
+}
+
+function teamToggle($this){
+	$parent = $this.parent();
+	$teamDescContainer = $('#teamDescContainer');
+
+	if($parent.hasClass('open')){
+		closeTeam($parent);
+	}
+	else{
+		teamCloseAll();
+		$containerHeight = $teamDescContainer.outerHeight(true);
+		$currentHeight = $parent.height();
+		$parent.height($currentHeight);
+		$newHeight = $containerHeight + $currentHeight;
+		$parent.height($newHeight);
+
+		$position = $this.position().top;
+		$height = $this.height();
+		$positionOfDesc = $position + $height;
+
+
+		$teamDescContainer.css({
+			'top': $positionOfDesc,
+			'position': 'absolute',
+			'opacity': '1'
+		});
+		$parent.addClass('open');
+
+	}
+}
+
 
 $(document).ready(function(){
 	setIndexPageToScreenHeight();
@@ -102,6 +149,8 @@ $( window ).resize(function(){
 	setIndexPageToScreenHeight();
 	setVerticalCenter();
 	setVerticalCenterDelay();
+	teamCloseAll();
+	$('.image-tile').height('auto');
 });
 
 

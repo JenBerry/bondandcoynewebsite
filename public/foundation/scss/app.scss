@@ -747,8 +747,43 @@ dl.awards{
 		}
 	}
 }
-#teamTiles img{
-	width: 100%;
+#teamTiles{
+	position: relative;
+	.team-member-image, .team-member-image img{
+		width: 100%;
+	}
+	.image-tile{
+		-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+		transition: height 1s;
+	}
+}
+#teamDescContainer{
+	position: absolute;
+	top:0;
+	opacity: 0;	
+	z-index: -1;
+	-webkit-transition: opacity 1s; /* For Safari 3.1 to 6.0 */
+	transition: opacity 1s;
+	margin-top:38px;
+	margin-bottom: 38px;
+	@include breakpoint(large){
+		margin-top:54px;
+		margin-bottom: 54px;
+		.close{
+			top:-54px;
+		}
+	}
+	#teamDesc{
+		padding: 0 30px;
+		@include breakpoint(large){
+			position: relative;
+		}
+	}
+	.close{
+		position: absolute;
+		top:-38px;
+		right:0;
+	}
 }
 #partnerSection{
 	margin-bottom: 60px;

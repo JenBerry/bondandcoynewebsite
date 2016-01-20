@@ -111,31 +111,47 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<div class="row expanded collapse small-up-2 medium-up-3 large-up-4">
-		{% set teamImages = [
-			'img/team/one.jpg',
-			'img/team/eight.jpg',
-			'img/team/nine.jpg',
-			'img/team/two.jpg',
-			'img/team/three.jpg',
-			'img/team/four.jpg',
-			'img/team/five.jpg',
-			'img/team/six.jpg',
-			'img/team/seven.jpg',
-		] %}
-		{% for image in teamImages %}
-		<div class="columns team-member">
-			<button type="button" onClick="$(this).siblings($('.team-member-desc')).slideToggle('slow')">
-				<img src="{{image}}" alt="">
-			</button>
-			<div class="team-member-desc">
-				<h2>Joey Bloggs</h2>
-				<h3>Job Title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quos eum aspernatur, aperiam accusamus dignissimos maiores? Aperiam temporibus perspiciatis, qui nostrum, quaerat ratione adipisci laudantium ullam hic dignissimos, cum excepturi ex. Unde numquam aliquid quisquam, corporis quis pariatur minus exercitationem! Eligendi impedit quo ab libero quasi laborum a eum tempore esse ducimus fuga atque est, non suscipit? Fugit blanditiis fuga voluptatum incidunt quo, unde. Atque fuga vero natus, perferendis sequi!</p>
+	<div id="teamTiles">
+		<div class="row expanded collapse small-up-2 medium-up-3 large-up-4">
+			{% set teamImages = [
+				'img/team/one.jpg',
+				'img/team/eight.jpg',
+				'img/team/nine.jpg',
+				'img/team/two.jpg',
+				'img/team/three.jpg',
+				'img/team/four.jpg',
+				'img/team/five.jpg',
+				'img/team/six.jpg',
+				'img/team/seven.jpg',
+			] %}
+			{% for image in teamImages %}
+			<div class="image-tile columns team-member">
+				<button class="team-member-image" type="button" onClick="teamToggle($(this))">
+					<img class="" src="{{image}}" alt="">
+				</button>
+				<div class="team-member-desc">
+					<h2>Joey Bloggs</h2>
+					<h3>Job Title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quos eum aspernatur, aperiam accusamus dignissimos maiores? Aperiam temporibus perspiciatis, qui nostrum, quaerat ratione adipisci laudantium ullam hic dignissimos, cum excepturi ex. Unde numquam aliquid quisquam, corporis quis pariatur minus exercitationem! Eligendi impedit quo ab libero quasi laborum a eum tempore esse ducimus fuga atque est, non suscipit? Fugit blanditiis fuga voluptatum incidunt quo, unde. Atque fuga vero natus, perferendis sequi!</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div id="teamDescContainer">
+			<div class="row expanded collapse">
+				<div class="column small-12 medium-11 end large-6 large-offset-3">
+					<div id="teamDesc">
+						<button class="close button square" onClick="teamCloseAll()">
+							<img src="/img/icons/cross.png" alt="">
+						</button>
+						<h2>Joey Bloggs</h2>
+						<h3>Job Title</h3>
+						<br>
+						<p class="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quos eum aspernatur, aperiam accusamus dignissimos maiores? Aperiam temporibus perspiciatis, qui nostrum, quaerat ratione adipisci laudantium ullam hic dignissimos, cum excepturi ex. Unde numquam aliquid quisquam, corporis quis pariatur minus exercitationem! Eligendi impedit quo ab libero quasi laborum a eum tempore esse ducimus fuga atque est, non suscipit? Fugit blanditiis fuga voluptatum incidunt quo, unde. Atque fuga vero natus, perferendis sequi!</p>
+					</div>
+				</div>
 			</div>
 		</div>
-		{% endfor %}
 	</div>
 	
 </section>
@@ -154,7 +170,7 @@
 	<div class="row column">
 		<h1>...and we were recognised in the process.</h1>
 	</div>
-	<div id="teamTiles" class="row expanded collapse small-up-2 medium-up-3 large-up-4 text-center">
+	<div class="row expanded collapse small-up-2 medium-up-3 large-up-4 text-center">
 		{% set awardImages = [
 			{'img':'img/award/one.jpg','year':'2015','award':"Chair's Grand Prix Award"},
 			{'img':'img/award/one.jpg','year':'2015','award':"Winner Innovation - SME"},
