@@ -2,10 +2,12 @@
 {% block title %}Work - {% endblock %}
 {% block content %}
 
-<div class="expanded row collapse">
-{% block mainWorkImage %}
-	{# <img class="small-12 columns" src="/img/aub1.jpg" alt="Main image"> #}
-{% endblock %}
+<div class="expanded row collapse full-width-images">
+	<div class="small-12 columns">
+		{% block mainWorkImage %}
+			{# <img src="/img/aub1.jpg" alt="Main image"> #}
+		{% endblock %}
+	</div>
 </div>
 <div id="socialContainer">
 	{% include '_social.twig' %}
