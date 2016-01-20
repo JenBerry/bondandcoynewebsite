@@ -1,43 +1,48 @@
 {% extends "_base.twig" %}
 {% block title %}Journal - {% endblock %}
 {% block content %}
-<section>
+<section id="blogPage">
 	{% set blogImages = [
-		'/img/prospectus.jpg',
-		'/img/blog/1.jpg',
-		'/img/blog/2.jpg',
-		'/img/blog/3.jpg',
-		'/img/prospectus.jpg'
+		{'img':'/img/prospectus.jpg', 'more':true},
+		{'img':'/img/blog/1.jpg', 'more':true},
+		{'img':'/img/blog/2.jpg', 'more':true},
+		{'img':'/img/blog/3.jpg', 'more':false},
+		{'img':'/img/prospectus.jpg', 'more':true},
 		] %}
 	{% for image in blogImages %}
-	<article>
+	<article class="main-article">
 		<div class="row expanded collapse">
-			<img src="{{image}}" alt="" class="columns small-12">
+			<img src="{{image.img}}" alt="" class="columns small-12">
 		</div>
 		<div class="hMargin">
-			<div class="row">
+			<div class="row main-content">
 				<div class="columns small-12 large-6">
 					<heading>
 						<h1>Our Weekend Away in Berlin</h1>
 						<h2>June 5 2015</h2>
 						<p class="strong-title">Education - Work</p>
 					</heading>
-					<hr class="show-for-large">
+					<hr>
 				</div>
 				<div class="columns small-12 large-6">
 					<p>Against a turbulent market backdrop, Arts University Bournemouth (AUB) needed to reinvent their prospectus. Recognising that it can easily be discarded by prospective students as a tired piece of print, and understanding the importance of their online presence, their traditional prospectus needed a new lease of life.</p>
-					<p>Unlike the interactive nature of online, the printed prospectus struggled to truly reflect the creative and collaborative environment of AUB. The breadth of content it covered and its physicality made it both costly to print and post to enquirers.</p>
-					<button type='button' class="button secondary hollow main-buttons">Read</button>
+					<p class="no-margin">Unlike the interactive nature of online, the printed prospectus struggled to truly reflect the creative and collaborative environment of AUB. The breadth of content it covered and its physicality made it both costly to print and post to enquirers.</p>
+					{% if image.more %}
+					<button type='button' class="read-more button secondary hollow main-buttons">Read</button>
+					{% endif %}
 				</div>
 			</div>
 		</div>
 	</article>
 	{% endfor %}
-	<div class="hMargin">
-		<div class="row">
-			<div class="columns small-6"><a href="#" class="button white strong-title">Previous Posts</a></div>
-			<div class="columns small-6 text-right"><a href="#" class="button white strong-title">New Posts</a></div>
+	<footer class="hMargin">
+		<div class="row columns">
+			<hr>
 		</div>
-	</div>
+		<div class="row">
+			<div class="columns small-6"><a href="#" class="button white strong-title"><img class="left" src="img/icons/left-chevron.png" alt=""> Previous Posts</a></div>
+			<div class="columns small-6 text-right"><a href="#" class="button white strong-title">New Posts <img class="right" src="img/icons/right-chevron.png" alt=""></a></div>
+		</div>
+	</footer>
 </section>
 {% endblock %}

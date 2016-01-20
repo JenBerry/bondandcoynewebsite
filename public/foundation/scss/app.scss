@@ -162,7 +162,7 @@ a.button:hover{
 		margin: 40px 0;
 	}
 }
-.strong-title, button.white.strong-title{
+.strong-title, button.white.strong-title, .button.white.strong-title{
 	@extend h3;
 	&.margin-top {
 		margin-top:0.7rem;
@@ -656,6 +656,8 @@ img.full-width{
 	@include breakpoint(large){
 		margin-bottom: 30px;
 	}
+}
+.main-article{
 	h1{
 		margin-top:0;
 	}
@@ -666,7 +668,13 @@ img.full-width{
 		max-width: rem-calc(400px);
 		display:block;
 	}
+	.main-content{
+		margin-top: 54px;
+		margin-bottom: 40px;
+	}
 }
+
+
 #imageList{
 	img{
 		width:100%;
@@ -853,5 +861,37 @@ dl.awards{
 	}
 }
 
+/* blog */
+#blogPage{
+	.main-article h3,.main-article .strong-title{
+		color: #808080;
+	}
+	hr{
+		@include breakpoint(medium){
+			margin: 30px 0;
+		}
+	}
+	.read-more{
+		margin-bottom: 0;
+		@include breakpoint(medium only){
+			float:right;
+		}
+	}
+	footer{
+		.row{
+			margin-top:45px;
+			margin-bottom:45px;
+		}
+		hr{
+			margin-top:0;
+		}
+		img.left{
+			padding-right:30px;
+		}
+		img.right{
+			padding-left:30px;
+		}
+	}
+}
 
 
