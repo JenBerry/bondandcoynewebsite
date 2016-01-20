@@ -122,29 +122,23 @@ function teamToggle($this){
 		closeTeam($parent);
 	}
 	else{
-		$openTeam = $('#teamTiles').find('.open');
-		if ($openTeam){
-			closeTeam($openTeam);
-		}
-
 		$position = $this.position().top;
 		$height = $this.height();
 		$positionOfDesc = $position + $height;
+		$openTeam = $('#teamTiles').find('.open');
 		if ($openTeam){
 			$currentPositionOfDesc = $teamDescContainer.position().top;
 			if ($currentPositionOfDesc < $positionOfDesc && $currentPositionOfDesc > 0){
 				$positionOfDesc = $positionOfDesc - $descriptionHeight;
 			}
+			closeTeam($openTeam);
 		}
-
 
 		$descriptionHeight = $teamDescContainer.outerHeight(true);
 		$tileHeight = $parent.height();
 		$parent.height($tileHeight);
 		$newHeight = $descriptionHeight + $tileHeight;
 		$parent.height($newHeight);
-
-
 
 		$teamDescContainer.css({
 			'top': $positionOfDesc,
