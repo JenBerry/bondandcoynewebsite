@@ -60,6 +60,15 @@ function scrollToElement($element, offset){
 		'scrollTop': $element.offset().top-offset},
 		1000);
 }
+function scrollToWork(){
+	$headerSticky = $('#pageHeader .menu-sticky');
+	if ($headerSticky.hasClass('is-stuck')){
+		$offset = 80;
+	} else{
+		$offset = 0;
+	}
+	scrollToElement($('#work-module-container'),$offset);
+}
 
 function verticalCenter($element, $container){
 	$elementHeight = $element.outerHeight();
@@ -93,6 +102,7 @@ function closeTeam($team){
 	$team.height($teamContentsHeight);
 	$teamDescContainer.css({
 		'opacity': '0',
+		'z-index' : '-1',
 	});
 	$team.removeClass('open');
 	// $team.height('auto');
@@ -112,22 +122,35 @@ function teamToggle($this){
 		closeTeam($parent);
 	}
 	else{
-		teamCloseAll();
-		$containerHeight = $teamDescContainer.outerHeight(true);
-		$currentHeight = $parent.height();
-		$parent.height($currentHeight);
-		$newHeight = $containerHeight + $currentHeight;
-		$parent.height($newHeight);
+		$openTeam = $('#teamTiles').find('.open');
+		if ($openTeam){
+			closeTeam($openTeam);
+		}
 
 		$position = $this.position().top;
 		$height = $this.height();
 		$positionOfDesc = $position + $height;
+		if ($openTeam){
+			$currentPositionOfDesc = $teamDescContainer.position().top;
+			if ($currentPositionOfDesc < $positionOfDesc && $currentPositionOfDesc > 0){
+				$positionOfDesc = $positionOfDesc - $descriptionHeight;
+			}
+		}
+
+
+		$descriptionHeight = $teamDescContainer.outerHeight(true);
+		$tileHeight = $parent.height();
+		$parent.height($tileHeight);
+		$newHeight = $descriptionHeight + $tileHeight;
+		$parent.height($newHeight);
+
 
 
 		$teamDescContainer.css({
 			'top': $positionOfDesc,
 			'position': 'absolute',
-			'opacity': '1'
+			'opacity': '1',
+			'z-index': '1'
 		});
 		$parent.addClass('open');
 

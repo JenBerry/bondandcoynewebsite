@@ -550,7 +550,9 @@ img.full-width{
 
 /* work module */
 .work-module nav{
-	border-bottom: 1px solid $light-gray;
+	@include breakpoint(medium){
+		border-bottom: 1px solid $light-gray;
+	}
 	.filter-row{
 		list-style: none;
 		margin-bottom:0;
@@ -583,7 +585,7 @@ img.full-width{
 		padding: 30px 0;
 		@extend .strong-heading;
 		margin:0;
-		&:hover{
+		&:hover, &.selected{
 			color: $dark-gray;
 		}
 		@include breakpoint(small only){
@@ -613,7 +615,6 @@ img.full-width{
 }
 .imageTiles{
 	cursor:pointer;
-	border-top: 1px solid $light-gray;
 	.columns{
 		position: relative;
 		.desc{
@@ -765,9 +766,14 @@ img.full-width{
 	}
 	.service-content-block{
 		margin-top: 40px;
+
 		border-bottom: 1px solid $light-gray;
+		&:last-child{
+			border-bottom: none;
+		}
 		.strong-footer{
 			// margin-bottom:40px;
+			margin-bottom:40px;
 		}
 	}
 }
