@@ -12,7 +12,7 @@
 <div id="socialContainer">
 	{% include '_social.twig' %}
 	<section id="blogPostPage">
-		<article class="main-article hMargin read-more-container">
+		<article class="main-article hMargin">
 			<div class="row">
 				<div class="small-12 medium-6 columns">
 					<heading>
@@ -21,15 +21,14 @@
 							<h2>Heading</h2>
 							<p class="strong-title">Foo Bar</p>
 						{% endblock %}
+						<hr>
+						<h3 class="author">{% block author %}Author{% endblock %}</h3>
 					</heading>
-					<hr class="show-for-large">
 				</div>
-				<div class="small-12 medium-11 large-6 columns large-float-right">
-					<hr class="hide-for-large">
+				<div class="small-12 medium-11 large-6 columns end">
 					{% block blogContent %}
 
 					{% endblock %}
-					<hr class="hide-for-large">
 				</div>
 			</div>
 			{% block blogExtraContent %}

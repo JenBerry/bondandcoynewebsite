@@ -453,8 +453,14 @@ img.full-width{
 	.social-sticky-container{
 		// height:0!important;
 		@include breakpoint(medium){
-			width:80px;
+			width:160px;
 			float:right;
+		}
+		.top-button{
+			display:none;
+		}
+		.is-stuck .top-button{
+			display: inline-block;
 		}
 	}
 	@include breakpoint(small only){
@@ -766,7 +772,6 @@ img.full-width{
 	}
 	.service-content-block{
 		margin-top: 40px;
-
 		border-bottom: 1px solid $light-gray;
 		&:last-child{
 			border-bottom: none;
@@ -775,6 +780,26 @@ img.full-width{
 			// margin-bottom:40px;
 			margin-bottom:40px;
 		}
+		// .placeholder{
+		// 	visibility: hidden;
+		// }
+		
+		// .fix-container{
+		// 	position: relative;
+		// }
+		// .fix-bottom{
+		// 	position: absolute;
+		// 	bottom:0;
+		// 	left:0;
+		// 	width:100%
+		// }
+		// .fix-bottom-right{
+		// 	position: absolute;
+		// 	bottom:0;
+		// 	right:0;
+		// 	width:50%;
+		// }
+
 	}
 }
 #teamSection{
@@ -827,7 +852,7 @@ img.full-width{
 	// not comprehensive yet
 	// build up styles as I need them
 	@include breakpoint(medium only){
-		.medium-up-3.expanded.collapse{
+		.medium-up-3.collapse{
 			&.medium-last1 .center-grid-columns{
 				&:last-child{
 					margin-left:33.3%;
@@ -841,7 +866,7 @@ img.full-width{
 		}
 	}
 	@include breakpoint(large){
-		.large-up-4.expanded.collapse{
+		.large-up-4.collapse{
 			&.large-last1 .center-grid-columns{
 				&:last-child{
 					margin-left:37.5%;
@@ -922,6 +947,9 @@ img.full-width{
 	article > .row{
 		margin-bottom:30px;
 	}
+	heading hr{
+		margin: 30px auto;
+	}
 	blockquote{
 		p, .strong-title{
 			color: $dark-gray;
@@ -935,6 +963,15 @@ img.full-width{
 			@extend .strong-title;
 			margin-top:0.7rem;
 		}
+	}
+	.author{
+		margin-bottom: 40px;
+	}
+	img.left{
+		padding-right:30px;
+	}
+	img.right{
+		padding-left:30px;
 	}
 }
 

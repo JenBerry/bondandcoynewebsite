@@ -3,12 +3,12 @@ $(document).foundation();
 
 function showToggle($container,$button){
 	if ($container.hasClass('truncated')){
-		$button.html('<img src="img/icons/minus.png" alt=""> Read Less');
+		$button.html('<img src="/img/icons/minus.png" alt=""> Read Less');
 		$contentHeight = $container.children($('.trucateContent')).height();
 		$container.css('height',$contentHeight);
 	}
 	else{
-		$button.html('<img src="img/icons/plus.png" alt=""> Read More');
+		$button.html('<img src="/img/icons/plus.png" alt=""> Read More');
 	}
 
 	$container.toggleClass('truncated');
@@ -16,7 +16,7 @@ function showToggle($container,$button){
 
 function showMenu(){
 
-	$("#mainMenuButton").html('<img src="img/icons/cross.png" alt=""><br><span>Close</span>');
+	$("#mainMenuButton").html('<img src="/img/icons/cross.png" alt=""><br><span>Close</span>');
 	$("#mainMenuPane").show();
 	$('#hideOnMenu').hide();
 	
@@ -35,7 +35,7 @@ function showMenu(){
 	});
 }
 function hideMenu(){
-	$("#mainMenuButton").html('<img src="img/icons/menu.png" alt=""><br><span>Menu</span>');
+	$("#mainMenuButton").html('<img src="/img/icons/menu.png" alt=""><br><span>Menu</span>');
 	$("#mainMenuPane").hide();
 	$('#hideOnMenu').show();
 }
@@ -162,7 +162,9 @@ $(window).on("load", function() {
 });
 
 $( window ).resize(function(){
-	hideMenu();
+	if ($("#mainMenuPane").css('display') != 'none'){
+		showMenu();
+	}
 	setIndexPageToScreenHeight();
 	setVerticalCenter();
 	setVerticalCenterDelay();
