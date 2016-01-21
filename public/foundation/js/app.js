@@ -96,59 +96,74 @@ function setIndexPageToScreenHeight(){
 	$('#indexPageScreenHeight .header-height').css("max-height",$headerHeight + "px");
 }
 
-function closeTeam($team){
-	$teamDescContainer = $('#teamDescContainer');
-	$teamContentsHeight = $team.find($('img')).height();
-	$team.height($teamContentsHeight);
-	$teamDescContainer.css({
-		'opacity': '0',
-		'z-index' : '-1',
-	});
-	$team.removeClass('open');
-	// $team.height('auto');
-}
-function teamCloseAll(){
-	$openTeam = $('#teamTiles').find('.open');
-	if ($openTeam){
-		closeTeam($openTeam);
+function closeAllTeam(){
+	$openTile = $('#teamTiles .open');
+	if ($openTile.length > 0){
+		$currentRowSmall = $openTile.closest($('.row-container-on-small'));
+		$currentRowMedium = $openTile.closest($('.row-container-on-medium'));
+		$currentRowSmall.height('auto');
+		$currentRowMedium.height('auto');
+
+		$openTile.removeClass('open');
+		$openTile.find($('.teamDescContainer')).css({
+			'opacity': '0',
+			'z-index': '-1'
+		});
 	}
 }
+
 
 function teamToggle($this){
-	$parent = $this.parent();
-	$teamDescContainer = $('#teamDescContainer');
-
-	if($parent.hasClass('open')){
-		closeTeam($parent);
+	function closeTile($tile, $row){
+		$row.height($tile.height());
+		$tile.removeClass('open');
+		$tile.find($('.teamDescContainer')).css({
+			'opacity': '0',
+			'z-index': '-1'
+		});
 	}
-	else{
-		$position = $this.position().top;
-		$height = $this.height();
-		$positionOfDesc = $position + $height;
-		$openTeam = $('#teamTiles').find('.open');
-		if ($openTeam){
-			$currentPositionOfDesc = $teamDescContainer.position().top;
-			if ($currentPositionOfDesc < $positionOfDesc && $currentPositionOfDesc > 0){
-				$positionOfDesc = $positionOfDesc - $descriptionHeight;
+
+	$imageTile = $this.parent();
+	$openTile = $('#teamTiles .open');
+	$currentRowSmall = $imageTile.closest($('.row-container-on-small'));
+	$currentRowMedium = $imageTile.closest($('.row-container-on-medium'));
+
+	currentBreakpoint = Foundation.MediaQuery.current;
+	if (currentBreakpoint == 'small'){
+		$currentRow = $currentRowSmall;
+	} else {
+		$currentRow = $currentRowMedium;
+	}
+
+
+	if ($imageTile.hasClass('open')){
+		closeTile($imageTile, $currentRow);
+	} else {
+		if ($openTile.length > 0){
+			if ($currentRow.find($('.open')).length > 0){
+				closeTile($openTile, $currentRow);
+			} else{
+				if (currentBreakpoint == 'small'){
+					$openRow =  $openTile.closest($('.row-container-on-small'));
+				}else{
+					$openRow =  $openTile.closest($('.row-container-on-medium'));
+				}
+				closeTile($openTile, $openRow);
 			}
-			closeTeam($openTeam);
 		}
-
-		$descriptionHeight = $teamDescContainer.outerHeight(true);
-		$tileHeight = $parent.height();
-		$parent.height($tileHeight);
-		$newHeight = $descriptionHeight + $tileHeight;
-		$parent.height($newHeight);
-
-		$teamDescContainer.css({
-			'top': $positionOfDesc,
-			'position': 'absolute',
+		$description = $this.siblings($('.teamDescContainer'));
+		descHeight = $description.outerHeight(true);
+		tileCurrentHeight = $imageTile.height();
+		$currentRow.height(tileCurrentHeight);
+		parentNewHeight = descHeight + tileCurrentHeight;
+		$currentRow.height(parentNewHeight);
+		$imageTile.addClass('open');
+		$description.css({
 			'opacity': '1',
 			'z-index': '1'
 		});
-		$parent.addClass('open');
-
 	}
+
 }
 
 
@@ -168,8 +183,7 @@ $( window ).resize(function(){
 	setIndexPageToScreenHeight();
 	setVerticalCenter();
 	setVerticalCenterDelay();
-	teamCloseAll();
-	$('.image-tile').height('auto');
+	closeAllTeam();
 });
 
 

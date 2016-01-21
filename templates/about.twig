@@ -114,7 +114,7 @@
 		</div>
 	</div>
 	<div id="teamTiles">
-		<div class="row expanded collapse small-up-2 medium-up-3 large-up-4">
+		
 			{% set teamImages = [
 				'/img/team/one.jpg',
 				'/img/team/eight.jpg',
@@ -127,32 +127,48 @@
 				'/img/team/seven.jpg',
 			] %}
 			{% for image in teamImages %}
-			<div class="image-tile columns team-member">
-				<button class="team-member-image" type="button" onClick="teamToggle($(this))">
+
+			{% if (loop.index-1) is divisible by(4) %}
+				<div class="row-container-on-medium row expanded collapse">
+			{% endif %}
+
+			{% if (loop.index-1) is divisible by(2) %}
+				<div class="columns small-12 medium-6">
+					<div class="row-container-on-small row collapse">
+			{% endif %}
+
+
+			<div id="tile{{ loop.index }}" class="image-tile columns small-6 team-member">
+				<button class="expand team-member-image full-width-images" type="button" onClick="teamToggle($(this))">
 					<img class="" src="{{image}}" alt="">
 				</button>
-				<div class="team-member-desc">
-					<h2>Joey Bloggs</h2>
-					<h3>Job Title</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quos eum aspernatur, aperiam accusamus dignissimos maiores? Aperiam temporibus perspiciatis, qui nostrum, quaerat ratione adipisci laudantium ullam hic dignissimos, cum excepturi ex. Unde numquam aliquid quisquam, corporis quis pariatur minus exercitationem! Eligendi impedit quo ab libero quasi laborum a eum tempore esse ducimus fuga atque est, non suscipit? Fugit blanditiis fuga voluptatum incidunt quo, unde. Atque fuga vero natus, perferendis sequi!</p>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-		<div id="teamDescContainer">
-			<div class="row expanded collapse">
-				<div class="column small-12 medium-11 end large-6 large-offset-3">
-					<div id="teamDesc">
-						<button class="close button square" onClick="teamCloseAll()">
-							<img src="/img/icons/cross.png" alt="">
-						</button>
-						<h2>Joey Bloggs</h2>
-						<h3>Job Title</h3>
-						<br>
-						<p class="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quos eum aspernatur, aperiam accusamus dignissimos maiores? Aperiam temporibus perspiciatis, qui nostrum, quaerat ratione adipisci laudantium ullam hic dignissimos, cum excepturi ex. Unde numquam aliquid quisquam, corporis quis pariatur minus exercitationem! Eligendi impedit quo ab libero quasi laborum a eum tempore esse ducimus fuga atque est, non suscipit? Fugit blanditiis fuga voluptatum incidunt quo, unde. Atque fuga vero natus, perferendis sequi!</p>
+				<div class="teamDescContainer">
+					<div class="row expanded collapse">
+						<div class="column small-12 medium-11 end large-6 large-offset-3">
+							<div id="teamDesc">
+								<button class="close button square" onClick="">
+									<img src="/img/icons/cross.png" alt="">
+								</button>
+								<h2>Joey Bloggs</h2>
+								<h3>Job Title</h3>
+								<br>
+								<p class="no-margin">{{loop.index}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quos eum aspernatur, aperiam accusamus dignissimos maiores? Aperiam temporibus perspiciatis, qui nostrum, quaerat ratione adipisci laudantium ullam hic dignissimos, cum excepturi ex. {% if loop.index is divisible by(3) %} Unde numquam aliquid quisquam, corporis quis pariatur minus exercitationem! Eligendi impedit quo ab libero quasi laborum a eum tempore esse ducimus fuga atque est, non suscipit? Fugit blanditiis fuga voluptatum incidunt quo, unde. Atque fuga vero natus, perferendis sequi!{% endif %}</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			{% if loop.index is divisible by(2) or loop.last %}
+					</div>
+				</div>
+			{% endif %}
+
+			{% if loop.index is divisible by(4) or loop.last %}
+				</div>
+			{% endif %}
+
+			{% endfor %}
 		</div>
 	</div>
 	
